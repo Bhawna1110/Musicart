@@ -6,11 +6,11 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const Product = require('./models/Product');
 const CartItem = require('./models/CartItem');
-const Feedback = require('./models/Feedback'); // Import the Feedback model
+const Feedback = require('./models/Feedback');
 
 const app = express();
 
-const allowedOrigin = 'http://localhost:3001';
+const allowedOrigin = 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app';
 
 app.use(express.json());
 
