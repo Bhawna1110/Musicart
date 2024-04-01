@@ -13,7 +13,7 @@ const Details = () => {
   const fetchProductData = async () => {
     try {
       console.log('Fetching product data...');
-      const response = await fetch('http://localhost:3000/products');
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/products');
       const data = await response.json();
       console.log('Product data:', data);
       setProduct(data);
