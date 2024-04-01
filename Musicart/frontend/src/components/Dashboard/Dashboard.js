@@ -80,8 +80,6 @@ const Dashboard = () => {
 
   const applyFilters = (filters) => {
     let filtered = [...products];
-const applyFilters = (filters) => {
-    let filtered = [...products];
 
     if (filters.searchQuery) {
       filtered = filtered.filter(product =>
