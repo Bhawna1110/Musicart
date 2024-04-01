@@ -42,7 +42,7 @@ const LoginPage = () => {
           localStorage.setItem('token', data.token);
           localStorage.setItem('username', email);
           setLoggedIn(true);
-          navigate('/Dashboard/dashboard');
+          navigate('/dashboard');
         } else {
           console.error(`${authEndpoint.charAt(1).toUpperCase() + authEndpoint.slice(2)} failed:`, data.error || 'Internal server error');
 
