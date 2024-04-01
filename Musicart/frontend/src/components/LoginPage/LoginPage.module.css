@@ -98,7 +98,7 @@ margin: 0 auto;
 .button {
   font-size: 18px;
   color: #FFFFFF;
-  background: #2E0052 !important;
+  background: #2E0052;
   margin-left: -15px;
   border-radius: 4px;
   padding: 10px 20px;
