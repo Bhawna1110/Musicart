@@ -121,9 +121,7 @@ const Dashboard = () => {
     setFilteredProducts(filtered);
   };
 
-    setFilteredProducts(filtered);
-  };
-
+ 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
     applyFilters({ ...filters, searchQuery: e.target.value });
