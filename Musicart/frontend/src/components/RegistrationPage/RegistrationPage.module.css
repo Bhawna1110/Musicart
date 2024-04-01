@@ -1,0 +1,168 @@
+
+.logoimg{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left:580px;
+    padding-bottom: 10px;
+    margin-top: -30px;
+    height: 40px;
+    width: 40px;
+  }
+.paragraph{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:2px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+font-size: 34px;
+font-weight: 600;
+line-height: 51.71px;
+text-align: left;
+color: #2E0052;
+margin-top: -2px;
+}
+
+.container {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 40px;
+  height:390px !important;
+    padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+border: 3px solid #D9D9D9;
+margin-top: -25px;
+}
+.Accheader{
+  color: #000000;
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: -30px;
+  margin-left: -15px;
+  margin-bottom: 10px;
+}
+.inputLabela {
+  color: #000000;
+  background-color: #fff!important;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 550;
+  margin-left: -15px;
+ }
+ .placea{
+  height: 25px;
+  margin-left: -15px;
+  border-radius: 4px;
+  border: 2px solid #B6B6B6;
+  width:350px;
+  margin-bottom: 10px;
+ }
+ .mobile {
+  color: #000000;
+  background-color: #fff!important;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 550;
+  margin-left: -15px;
+ }
+ .number{
+  height: 25px;
+  margin-left: -15px;
+  border-radius: 4px;
+  border: 2px solid #B6B6B6;
+  width:350px;
+  margin-bottom: 10px;
+ }
+
+.mail{
+  color: #000000;
+  background-color: #fff!important;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 550;
+  margin-left: -15px;
+}
+
+.identity{
+  height: 25px;
+  margin-left: -15px;
+  border-radius: 4px;
+  border: 2px solid #B6B6B6;
+  width:350px;
+  margin-bottom: 10px; 
+}
+.pass{
+  color: #000000;
+  background-color: #fff!important;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 550;
+  margin-left: -15px;
+}
+
+.word{
+  height: 25px;
+  margin-left: -15px;
+  border-radius: 4px;
+  border: 2px solid #B6B6B6;
+  width:350px;
+}
+
+ .thebutton {
+  font-size: 18px;
+  color: #FFFFFF;
+  background: #2E0052;
+  margin-left: -15px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-top: -5px;
+  cursor: pointer;
+  width: 362px;
+height: 42px;
+font-family: Roboto;
+margin-bottom: -10px;
+}
+.notice{
+  font-family: Roboto;
+font-size: 15px;
+text-align: left;
+margin-left: -15px;
+}
+.info{
+  font-family: Roboto;
+font-size: 15px;
+font-weight: 550;
+text-align: left;
+margin-left: -15px;
+margin-bottom: 10px;
+}
+
+.ask{
+  font-family: Roboto;
+font-size: 22x;
+line-height: 32px;
+text-align: center;
+text-decoration: underline;
+margin-bottom: -10px;
+}
+.footerarea {
+  font-family: Roboto;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+    background: #2E0052 !important;
+    text-align: center;
+    width: 220vh;
+    height: 35px!important ;
+}
+.error-message {
+  font-size: 12px;
+  color: red;
+  text-align: left;
+  margin-top: 5px;
+}

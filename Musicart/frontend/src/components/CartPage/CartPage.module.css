@@ -1,0 +1,146 @@
+.cartpage {
+  text-align: center;
+}
+
+.carthead {
+  position: relative;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1px;
+  width: 100%; 
+  height: 40px;
+  background: #2E0052;
+}
+
+.cartnumber {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.cartphone {
+  height: 21px;
+  width: 21px;
+  margin-top: 7px;
+  margin-left: 35px;
+  padding: 3.35px 3.35px 4.38px 4.38px;
+}
+
+.cartoffer {
+  font-size: 22px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-left: 350px;
+}
+
+.log-options {
+  position: absolute; 
+  top: 50%; 
+  right: 20px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-right: 5px; 
+  font-size: 16px; 
+}
+
+.log-options span:last-child {
+  margin-right: 0; 
+}
+
+.log-options span {
+  color: white;
+  cursor: pointer;
+}
+
+.emptycart {
+  height: 20px;
+}
+
+.logocart {
+  display: flex;
+  align-items: center;
+}
+
+.cartimg {
+  width: 38px;
+  height: 38px;
+  margin-left: 28px;
+}
+
+.cartlogo {
+  width: 176px;
+  height: 52px;
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 600;
+  color: #2E0052 !important;
+  margin-right: 20px;
+  margin-top: -43px;
+  margin-left: 70px;
+}
+
+.cartoption {
+  margin-top: -43px;
+  margin-left: 220px;
+  font-family: Roboto;
+  font-size: 21px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.backtoproducts {
+  width: 181px;
+  height: 32px;
+  margin-top: 37px;
+  margin-left: 44px;
+  border: none;
+  border-radius: 8px;
+  opacity: 0px;
+  background: #2E0052;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32.96px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cartcartbutton {
+  width: 167px;
+  height: 45px;
+  background-color:#1D7000;
+  color:#FFFFFF;
+  margin-left: 586px;
+  border-radius: 45px;
+  font-family: Roboto;
+  font-size: 22.23px;
+  font-weight: 400;
+  line-height: 26.05px;
+  margin-top: 10px;
+}
+
+.picture {
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+}
+
+.cartheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.bag {
+  color: #000000;
+  width: 22px;
+  height: 31px;
+  margin-left: 482px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 600;
+}
