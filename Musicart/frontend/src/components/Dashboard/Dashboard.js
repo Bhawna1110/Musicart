@@ -80,8 +80,48 @@ const Dashboard = () => {
 
   const applyFilters = (filters) => {
     let filtered = [...products];
+const applyFilters = (filters) => {
+    let filtered = [...products];
 
-    // Apply filters
+    if (filters.searchQuery) {
+      filtered = filtered.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    if (filters.headphoneType) {
+      filtered = filtered.filter(product => product.type.toLowerCase() === filters.headphoneType.toLowerCase());
+    }
+
+    if (filters.companyFeatured) {
+      filtered = filtered.filter(product => product.brand.toLowerCase() === filters.companyFeatured.toLowerCase());
+    }
+
+    if (filters.color) {
+      filtered = filtered.filter(product => product.color.toLowerCase() === filters.color.toLowerCase());
+    }
+
+    if (filters.price) {
+      const [minPrice, maxPrice] = filters.price.split('-');
+      filtered = filtered.filter(product =>
+        product.price >= parseFloat(minPrice) && product.price <= parseFloat(maxPrice)
+      );
+    }
+
+    if (filters.sortBy) {
+      if (filters.sortBy === 'priceLowest') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (filters.sortBy === 'priceHighest') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (filters.sortBy === 'nameAZ') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (filters.sortBy === 'nameZA') {
+        filtered.sort((a, b) => b.name.localeCompare(a.name));
+      }
+    }
+
+    setFilteredProducts(filtered);
+  };
 
     setFilteredProducts(filtered);
   };
