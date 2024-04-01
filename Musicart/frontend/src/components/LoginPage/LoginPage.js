@@ -24,11 +24,11 @@ const LoginPage = () => {
 
       const authEndpoint = endpoint || '/login';
 
-      const response = await fetch(`http://localhost:3000${authEndpoint}`, {
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com${authEndpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Origin': 'http://localhost:3001'
+          'Origin': 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app'
         },
         body: JSON.stringify({ email, password }),
       });
