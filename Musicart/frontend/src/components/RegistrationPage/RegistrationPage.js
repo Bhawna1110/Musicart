@@ -25,7 +25,11 @@ const RegistrationPage = () => {
         alert('All fields are required');
         return;
       }
-
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        setError('Invalid email format');
+        return;
+      }
       const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/register', {
         method: 'POST',
         headers: {
@@ -53,11 +57,25 @@ const RegistrationPage = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let updatedValue = value;
+  
+    if (name === 'mobileNumber') {
+      updatedValue = value.replace(/\D/g, '');
+      updatedValue = updatedValue.slice(0, 10);
+    }
+  
+    setFormData({ ...formData, [name]: updatedValue });
   };
-
   return (
     <div>
+    <input
+  className={`${styles.number} ${formData.mobileNumber.length !== 10 && styles.invalidInput}`}
+  type="text"
+  id="mobile"
+  name="mobileNumber"
+  value={formData.mobileNumber}
+  onChange={handleChange}
+/>
       <div className={styles.upper}> 
         <img className={styles.logoimg} src="logo.png" alt="Logo" /> 
         <h2 className={styles.paragraph}>Musicart</h2> 
@@ -118,7 +136,7 @@ const RegistrationPage = () => {
       </div>
       <p className={styles.ask}> 
         Already have an account?{' '}
-        <a className={styles.link} onClick={() => navigate('/login')}>Sign in</a> 
+        <a className={styles.link} onClick={() => navigate('/')}>Sign in</a> 
       </p>
       {error && <div className={styles.errorMessage}>{error}</div>} 
       <p className={styles.footerarea}>Musicart | All rights reserved</p> 

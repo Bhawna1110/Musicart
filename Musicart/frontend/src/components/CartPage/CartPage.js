@@ -5,17 +5,20 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0); 
+  const [orderTotal, setOrderTotal] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchCartItems();
     checkLoggedIn();
-    calculateTotalAmount  
+    calculateTotalAmount()  
   }, []);
 
   useEffect(() => {
     calculateTotalAmount();
-  }, []);
+    calculateOrderTotal();
+    calculateOrderTotal()
+  }, [cartItems]);
 
   const fetchCartItems = async () => {
     try {
@@ -52,7 +55,7 @@ const CartPage = () => {
 
   const handleLogin = () => {
     localStorage.removeItem('token');
-    navigate('/login');
+    navigate('/');
   };
 
   const handleSignup = () => {
@@ -72,6 +75,14 @@ const CartPage = () => {
     navigate('/checkout');
   };
 
+
+  const calculateOrderTotal = () => {
+    // Calculate order total (total amount + delivery charge or any other charges)
+    const convienceCharge = 45;
+    const deliveryCharge = 45; // Example delivery charge
+    const total = totalAmount + convienceCharge;
+    setOrderTotal(total);
+  };
   const handleQuantityChange = async (e, itemId) => {
     try {
       const newQuantity = parseInt(e.target.value);
@@ -102,6 +113,7 @@ const CartPage = () => {
   
 
       calculateTotalAmount();
+      calculateOrderTotal();
     } catch (error) {
       console.error('Error updating quantity:', error);
     }
@@ -168,7 +180,7 @@ const CartPage = () => {
 
   <div className={styles.quantityContainer}>
     <p className={styles.quantityTitle}>Quantity</p>
-    <select className={styles.quantityDropdown} value={item.quantity} style={{ width: '50px' }}>
+    <select className={styles.quantityDropdown} value={item.quantity} style={{ width: '50px' }} onChange={(e) => handleQuantityChange(item._id, e.target.value)}>
       {[...Array(8)].map((_, index) => (
         <option key={index + 1} value={index + 1}>{index + 1}</option>
       ))}
@@ -202,7 +214,10 @@ const CartPage = () => {
     
    
       <div className={styles.end}>
+       
        <p className={styles.amt} >₹{totalAmount + 45}</p>
+       <p className={styles.orderTotal}>Order Total: <span className={styles.totalRed}>${orderTotal}</span></p>
+      
       </div>
       
       <footer className={styles.bottom}>

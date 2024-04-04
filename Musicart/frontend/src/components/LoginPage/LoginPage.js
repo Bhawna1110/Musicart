@@ -21,7 +21,11 @@ const LoginPage = () => {
         setError('Email and password are required');
         return;
       }
-
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        setError('Invalid email format');
+        return;
+      }
       const authEndpoint = endpoint || '/login';
 
       const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com${authEndpoint}`, {
@@ -61,7 +65,7 @@ const LoginPage = () => {
       setError('Network or server error occurred');
     }
   };
-
+ 
   const handleRegisterRedirect = () => {
     navigate('/register');
   };
@@ -92,7 +96,7 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="button" className={styles.button} onClick={() => handleAuth('/login')}> 
+          <button type={styles.thebutton} className={styles.button} onClick={() => handleAuth('/login')}> 
             Continue
           </button>
         </form>

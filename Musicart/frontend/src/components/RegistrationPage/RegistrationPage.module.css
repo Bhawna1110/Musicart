@@ -127,6 +127,9 @@ height: 42px;
 font-family: Roboto;
 margin-bottom: -10px;
 }
+.invalidInput {
+  border: 1px solid red;
+}
 .notice{
   font-family: Roboto;
 font-size: 15px;

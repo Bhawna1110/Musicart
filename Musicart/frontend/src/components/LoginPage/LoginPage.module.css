@@ -95,19 +95,20 @@ margin: 0 auto;
   align-items: center;
 }
 
-.button {
+
+.thebutton {
   font-size: 18px;
   color: #FFFFFF;
-  background: #2E0052 !important;
+  background: #2E0052;
   margin-left: -15px;
   border-radius: 4px;
   padding: 10px 20px;
-  margin-top: 10px;
+  margin-top: -5px;
   cursor: pointer;
-  width: 432px;
+  width: 362px;
 height: 42px;
-border-radius: 8px;
-opacity: 0px;
+font-family: Roboto;
+margin-bottom: -10px;
 }
 .text{
   display: flex;
