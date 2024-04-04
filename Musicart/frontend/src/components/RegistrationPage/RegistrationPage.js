@@ -43,7 +43,7 @@ const RegistrationPage = () => {
 
       if (response.ok) {
         setError('');
-        navigate('/');
+        navigate('/login');
       } else {
         console.error('Registration failed:', data.error || 'Internal server error');
         setError(data.error || 'Internal server error');
@@ -128,7 +128,7 @@ const RegistrationPage = () => {
           <p className={styles.info}> 
             By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Musicart. Message and data rates may apply.
           </p>
-          <button type="button" className={styles.theButton} onClick={handleRegistration}>Continue</button> 
+          <button type="button" className={styles.thebutton} onClick={handleRegistration}>Continue</button> 
           <p className={styles.notice}> 
             By continuing, you agree to Musicart privacy notices and conditions of use.
           </p>
