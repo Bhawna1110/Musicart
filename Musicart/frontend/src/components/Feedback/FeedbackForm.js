@@ -7,9 +7,9 @@ const FeedbackForm = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+
     console.log('Feedback submitted:', { feedbackType, feedbackText });
-    onClose(); // Close the feedback form modal after submission
+    onClose(); 
   };
 
   return (

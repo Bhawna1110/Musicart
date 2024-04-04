@@ -1,32 +1,266 @@
-/* details.css */
-.details-container {
-    display: flex;
-  }
+
+.carthead {
+  position: relative;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1px;
+  width: 100%; 
+  height: 40px;
+  background: #2E0052;
+}
+.mobNumber {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.imageGallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainImage {
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  object-fit: contain;
+}
+
+.smallImages {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.smallImage {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  object-fit: contain;
+  margin-right: 10px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.smallImage:last-child {
+  margin-right: 0;
+}
+.phone{
+  height:21px;
+  width:21px;
+margin-top: 7px;
+margin-left: 35px;
+padding: 3.35px 3.35px 4.38px 4.38px;
+background-image: url('phone.png');
+background-repeat: no-repeat;
+}
+
+.phoneNumber{
+  color: #fff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+}
+.discountOffer {
+font-size: 22px;
+font-family: Roboto;
+font-size: 18px;
+font-weight: 500;
+text-align: center;
+color: #FFFFFF;
+margin-left: 350px;
+}
+
+
+.userOptions {
+  position: absolute; 
+  top: 50%; 
+  right: 20px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-right: 5px; 
+  font-size: 16px; 
+}
+
+.userOptions span:last-child {
+  margin-right: 0; 
+}
+
+.userOptions span {
+  color: white;
+  cursor: pointer;
+}
+
+
+.picture {
+  width: 23px;
+  height: 22px;
+}
+
+
+.backToProducts {
+  width: 221px;
+height: 39px;
+  margin-top: 27px;
+  margin-left: 54px;
+  border: none;
+  border-radius: 10px;
+  background: hsl(274, 100%, 16%);
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32.96px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.emptyCart {
+  height: 20px;
+}
+
+.logoCart {
+  display: flex;
+}
+
+.cartLogo {
+  width: 176px;
+  height: 52px;
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 600;
+  color: #2E0052 !important;
+ 
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.cartOption {
+  margin-top: 22px;
+  margin-left: -15px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.cartButton {
+  width: 147px;
+  height: 45px;
+  background-color:#1D7000;
+  color:#FFFFFF;
+  margin-left: 706px;
+  border-radius: 35px;
+  font-family: Roboto;
+  font-size: 23px;
+  border: none;
+  font-weight: 400;
+  margin-top: 19px;
+}
+
+.cartImg {
+  width: 48px;
+  height: 48px;
+  margin-left: 60px;
+  margin-top: -50px;
+}
+
+.cartImage {
+  width: 48px;
+  height: 48px;
+  margin-left: 40px;
+  margin-top: 10px;
+  background-image: url('logo.png');
+background-repeat: no-repeat;
+}
+
+
+
+.productDetails {
+  flex: 1;
+  padding: 20px;
+}
+
+.productDetails h2 {
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 550;
+
   
-  .carousel-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+}
+.name{
+  font-family: Roboto;
+font-size: 50px;
+font-weight: 550;
+}
+.ratings{
+  color: #FFD600;
+font-size: 40px;
+}
+.ratings, .review {
+  display: inline;
+}
+.review{
+  font-family: Roboto;
+font-size: 29px;
+font-weight: 400;
+margin-left: 10px;
+
+
+}
+.color{
+  font-family: Roboto;
+font-size: 33.97px;
+font-weight: 400;
+line-height: 39.81px;
+text-align: left;
+
+}
+.description{
+  font-family: Roboto;
+font-size: 28px;
+font-weight: 400;
+list-style-type: disc; 
+  white-space: pre-line;
+
+}
+.avail{
+  font-family: Roboto;
+font-size: 33.97px;
+font-weight: 500;
+}
+.price{
+  font-family: Roboto;
+font-size: 33.97px;
+font-weight: 550;
+}
+.addToCartButton{
+  width: 269px;
+height: 44px;
+border-radius: 40px;
+border: none;
+background: #FFD600;
+font-family: Roboto;
+font-size: 25px;
+font-weight: 400;
+color: #000000;
+}
+.BuyNowButton{
+  background: #FFB800;
+
+    width: 269px;
+  height: 44px;
+  border-radius: 40px;
+  border: none;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 400;
+  color: #000000;
   
-  .main-carousel img {
-    width: 100%;
-    max-height: 400px; /* Adjust as needed */
-  }
-  
-  .thumbnail-carousel img {
-    width: 100px; /* Adjust thumbnail size as needed */
-    margin-top: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
-  }
-  
-  .product-details {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .product-details h2 {
-    margin-top: 0;
-  }
-  
+}
+.bottom{
+  background-color:  #2E0052;
+  color: white;
+  text-align: center;
+  padding: 10px;
+ height:30px;
+ width: 100%; 
+
+}

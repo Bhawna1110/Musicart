@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './order.module.css'; // Import CSS module
+import styles from './order.module.css';
 
 function Order() {
   return (

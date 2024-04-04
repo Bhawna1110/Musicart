@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage/LoginPage';
 import Dashboard from './components/Dashboard/Dashboard';
-import CartPage from './components/CartPage/CartPage'; // Import the CartPage component
+import CartPage from './components/CartPage/CartPage'; 
 import Details from './components/Details/Details'; 
 import Order from './components/Order/order'; 
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
@@ -27,7 +27,7 @@ function App() {
         <Route path='/' element={<LoginPage />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
         <Route path='/register' element={<RegistrationPage />}></Route>
-        <Route path='/details' element={<Details />}></Route>
+        <Route path="/details/:id" element={<Details />}></Route>
         <Route path='/cart' element={<CartPage />}></Route>
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/feedbackform' element={<FeedbackForm/>}></Route>

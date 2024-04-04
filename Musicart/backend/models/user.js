@@ -7,12 +7,12 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   cart: [{
-    product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' }, 
+    productId: { type: String }, 
     quantity: { type: Number },
     image: { type: String },
     price: { type: Number },
-    name: { type: String }, // Add the name field
-    color: { type: String } // Add the color field
+    name: { type: String }, 
+    color: { type: String } 
   }],
 });
 

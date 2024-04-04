@@ -19,11 +19,11 @@ const Dashboard = () => {
     price: '',
     sortBy: '',
   });
-
-
   const toggleFeedbackForm = () => {
     setShowFeedbackForm(!showFeedbackForm);
   };
+
+
   const [userFullName, setUserFullName] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -34,7 +34,7 @@ const Dashboard = () => {
     fetchProducts();
     fetchUserData();
     fetchCartItemCount();
-  }, []);
+  }, [cartCount]);
 
   const fetchProducts = async () => {
     try {
@@ -42,19 +42,17 @@ const Dashboard = () => {
       const data = await response.json();
       setProducts(data);
       setFilteredProducts(data);
+      
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
 
-  const handleDetailsButtonClick = () => {
-    navigate('/Details');
+  const handleDetailsButtonClick = (id) => {
+    navigate(`/details/${id}`);
   };
 
-  const handleDetailsButton = () => {
-    navigate('/order');
-  };
-
+ 
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -77,7 +75,6 @@ const Dashboard = () => {
       console.error('Error fetching user data:', error.message);
     }
   };
-
   const applyFilters = (filters) => {
     let filtered = [...products];
 
@@ -121,7 +118,6 @@ const Dashboard = () => {
     setFilteredProducts(filtered);
   };
 
- 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
     applyFilters({ ...filters, searchQuery: e.target.value });
@@ -161,33 +157,36 @@ const Dashboard = () => {
   const handleSignup = () => {
     navigate('/register');
   };
-
   const handleAddToCart = async (productId) => {
     try {
+      console.log(productId)
       const token = localStorage.getItem('token');
-      const cartItem = { product: productId, quantity: 1 };
+      const cartItem = { product: productId, quantity: 1 }; 
       const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
         method: 'POST',
         headers: {
           Authorization: token,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(cartItem),
+        body: JSON.stringify(cartItem), 
       });
+
+      console.log(response)
 
       if (!response.ok) {
         throw new Error('Failed to add product to cart');
       }
 
-      setCartCount(cartCount + 1);
+      setCartCount(cartCount + 1); 
     } catch (error) {
       console.error('Error adding product to cart:', error);
     }
   };
-
   const handleViewCart = () => {
-    navigate('/cart');
+    navigate('/cart'); 
   };
+
+
 
   const fetchCartItemCount = async () => {
     try {
@@ -203,7 +202,7 @@ const Dashboard = () => {
       }
 
       const data = await response.json();
-      setCartItemCount(data.count);
+      setCartItemCount(data.count); 
     } catch (error) {
       console.error('Error fetching cart item count:', error);
     }
@@ -281,21 +280,21 @@ const Dashboard = () => {
           <img src="list.png" alt="List View" />
         </div>
         <div className={styles.filters}>
-          <select id="select1" onChange={(e) => handleFilterChange('headphoneType', e.target.value)}>
+          <select id={styles.select1} onChange={(e) => handleFilterChange('headphoneType', e.target.value)}>
             <option value="">Headphone type</option>
             <option value="">Featured</option>
             <option value="In-Ear headphone">In-ear headphone</option>
             <option value="On-Ear headphone">On-ear headphone</option>
             <option value="Over-Ear headphone">Over-ear headphone</option>
           </select>
-          <select id="select2" onChange={(e) => handleFilterChange('companyFeatured', e.target.value)}>
+          <select id={styles.select2} onChange={(e) => handleFilterChange('companyFeatured', e.target.value)}>
             <option value="">Company</option>
             <option value="">Featured</option>
             <option value="jbl">JBL</option>
             <option value="sony">Sony</option>
             <option value="boat">Boat</option>
           </select>
-          <select id="select3" onChange={(e) => handleFilterChange('color', e.target.value)}>
+          <select id={styles.select3} onChange={(e) => handleFilterChange('color', e.target.value)}>
             <option value="">Color</option>
             <option value="">Featured</option>
             <option value="blue">Blue</option>
@@ -303,14 +302,14 @@ const Dashboard = () => {
             <option value="white">White</option>
             <option value="brown">Brown</option>
           </select>
-          <select id="select4" onChange={(e) => handleFilterChange('price', e.target.value)}>
+          <select id={styles.select4} onChange={(e) => handleFilterChange('price', e.target.value)}>
             <option value="">Price</option>
             <option value="">Featured</option>
             <option value="0-1000">₹0-₹1,000</option>
             <option value="1000-10000">₹1,000-₹10,000</option>
             <option value="10000-20000">₹10,000-₹20,000</option>
           </select>
-          <select id="select5" onChange={(e) => handleSortByChange(e.target.value)}>
+          <select id={styles.select5} onChange={(e) => handleSortByChange(e.target.value)}>
             <option value="">Sort by: Featured</option>
             <option value="">Featured</option>
             <option value="priceLowest">Price: Lowest</option>
@@ -325,6 +324,9 @@ const Dashboard = () => {
         {filteredProducts.length > 0 ? (
           filteredProducts.map(product => (
             <div key={product._id} className={viewType === 'grid' ? styles.productItemGrid : styles.productItemList}>
+            {viewType === 'grid' && (
+          <div className={styles.gridClickOverlay} onClick={() => handleDetailsButtonClick(product._id)}></div>
+        )}
               <div className={styles.upperSection}>
                 <img src={product.image} alt={product.name} className={styles.productImage} />
                 <div className={styles.upperSectionInner}>
@@ -339,22 +341,23 @@ const Dashboard = () => {
                   <>
                     <p className={styles.additionalPara}>{product.about}</p>
                     <button className={styles.addToCartButton} onClick={() => handleAddToCart(product._id)}></button>
-                    <button className={styles.customButton} onClick={() => handleDetailsButtonClick()}>Details</button>
-                    <button onClick={() => handleDetailsButton()}>Order</button>
+                    <button className={styles.customButton} onClick={() => handleDetailsButtonClick(product._id)}>Details</button>
+                    
                   </>
                 )}
-              </div>
+                </div>
+    
             </div>
           ))
         ) : (
           <p className={styles.noProductsMessage}>No products found matching your filters.</p>
         )}
-        {/* Feedback button */}
+      
       <button className={styles.feedbackButton} onClick={toggleFeedbackForm}>
         <image src="feedback.png"></image>
       </button>
 
-      {/* Feedback form modal */}
+     
       {showFeedbackForm && <FeedbackForm onClose={toggleFeedbackForm} />}
       </div>
 

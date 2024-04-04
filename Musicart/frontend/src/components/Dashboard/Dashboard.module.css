@@ -8,6 +8,7 @@ body::-webkit-scrollbar {
 }
 
 
+
 .head {
   position: relative;
   display: flex;
@@ -147,18 +148,6 @@ height: 27.68px;
 margin-right: 8px;
 }
 
-/*
-.user-initials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 60px;
-  margin-left: 10px;
-  border-radius: 50px;
-  border: 1px solid #2E0052;
-  font-size: 28px; 
-}*/
 
 .userInitials {
   margin-top: 5px;
@@ -406,7 +395,7 @@ appearance: none;
 padding-right: 10px;
 
 background-repeat: no-repeat;
-background-position: calc(100% - 13px) center; /* Move arrow a little to the left */
+background-position: calc(100% - 13px) center; 
 background-size: 11px;
 background-position-y: 60%;
 }
@@ -440,6 +429,7 @@ background-position-y: 60%;
   line-height: 27.45px;
   text-align: center;
   appearance: none; 
+  background-image: url('down.png'); 
   padding-right: 10px;
   background-repeat: no-repeat;
   background-position: calc(100% - 23px) center; 
@@ -458,7 +448,8 @@ background-position-y: 60%;
   font-weight: 400;
   line-height: 22.33px;
   text-align: left;
-  color: #000000;  
+  color: #000000; 
+  
 }
 .gridView img {
   width: 45px;
@@ -603,17 +594,17 @@ margin-top: 37px;
 }
 
 .productItemList:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-/* Feedback button styles */
+
 .feedbackButton {
   background-image: url('feedback.png');
-  /* Feedback button styles */
-  background-size: cover; /* Adjust the image size */
+
+  background-size: cover; 
   background-repeat: no-repeat;
   position: fixed;
-  bottom: 20px; /* Adjust distance from bottom */
-  right: 20px; /* Adjust distance from right */
+  bottom: 20px; 
+  right: 20px; 
   width: 80px;
   height: 80px;
   border-radius: 50%;
