@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './LoginPage.module.css';
+import styles from './LoginPage.module.css'; // Import CSS module
 import Dashboard from '../Dashboard/Dashboard';
 
 const LoginPage = () => {
@@ -21,11 +21,7 @@ const LoginPage = () => {
         setError('Email and password are required');
         return;
       }
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        setError('Invalid email format');
-        return;
-      }
+
       const authEndpoint = endpoint || '/login';
 
       const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com${authEndpoint}`, {
@@ -65,20 +61,21 @@ const LoginPage = () => {
       setError('Network or server error occurred');
     }
   };
- 
+
   const handleRegisterRedirect = () => {
     navigate('/register');
   };
 
   return (
     <div>
-      <div className={styles.logoContainer}> 
-        <img className={styles.logoImage} src="logo.png" alt="Logo"/>         <h2 className={styles.paratext}>Musicart</h2> 
+      <div className={styles.logoContainer}> {/* Use styles.logoContainer */}
+        <img className={styles.logoImage} src="logo.png" alt="Logo"/> {/* Use styles.logoImage */}
+        <h2 className={styles.paratext}>Musicart</h2> {/* Use styles.paratext */}
       </div>
-      <div className={styles.newContainer}> 
-        <h1 className={styles.header}>Sign in</h1> 
+      <div className={styles.newContainer}> {/* Use styles.newContainer */}
+        <h1 className={styles.header}>Sign in</h1> {/* Use styles.header */}
         <form>
-          <label className={styles.inputLabel1}> 
+          <label className={styles.inputLabel1}> {/* Use styles.inputLabel1 */}
             Enter your email or mobile number
           </label><br />
           <input className={styles.place1}
@@ -86,8 +83,8 @@ const LoginPage = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <div className={styles.passwordField}>
-            <label className={styles.inputLabel2}> 
+          <div className={styles.passwordField}> {/* Use styles.passwordField */}
+            <label className={styles.inputLabel2}> {/* Use styles.inputLabel2 */}
               Password
             </label><br />
             <input className={styles.place2} 
@@ -96,22 +93,22 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type={styles.thebutton} className={styles.thebutton} onClick={() => handleAuth('/')}> 
+          <button type="button" className={styles.button} onClick={() => handleAuth('/login')}> {/* Use styles.button */}
             Continue
           </button>
         </form>
-        <p className={styles.note}> 
+        <p className={styles.note}> {/* Use styles.note */}
           By continuing, you agree to Musicart privacy notice and conditions of use.
         </p>
       </div>
-      <div className={styles.text}> 
-        <hr className={styles.line1} /> 
+      <div className={styles.text}> {/* Use styles.text */}
+        <hr className={styles.line1} /> {/* Use styles.line1 */}
         <p>New to Musicart?</p>
-        <hr className={styles.line2} /> 
+        <hr className={styles.line2} /> {/* Use styles.line2 */}
       </div>
       <button className={styles.newUserLink} onClick={handleRegisterRedirect}>Create your Musicart account</button> {/* Use styles.newUserLink */}
-      {error && <div className={styles.errorMessage}>{error}</div>}
-      <p className={styles.footer}>Musicart | All rights reserved</p> 
+      {error && <div className={styles.errorMessage}>{error}</div>} {/* Use styles.errorMessage */}
+      <p className={styles.footer}>Musicart | All rights reserved</p> {/* Use styles.footer */}
     </div>
   );
 };
