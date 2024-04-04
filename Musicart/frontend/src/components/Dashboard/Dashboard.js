@@ -151,7 +151,7 @@ const Dashboard = () => {
 
   const handleLogin = () => {
     localStorage.removeItem('token');
-    navigate('/');
+    navigate('/login');
   };
 
   const handleSignup = () => {
