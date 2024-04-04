@@ -96,7 +96,7 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type={styles.thebutton} className={styles.button} onClick={() => handleAuth('/login')}> 
+          <button type={styles.thebutton} className={styles.thebutton} onClick={() => handleAuth('/')}> 
             Continue
           </button>
         </form>
