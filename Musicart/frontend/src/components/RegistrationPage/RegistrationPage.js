@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './RegistrationPage.module.css'; 
+import styles from './RegistrationPage.module.css'; // Import CSS module
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,11 +25,7 @@ const RegistrationPage = () => {
         alert('All fields are required');
         return;
       }
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        setError('Invalid email format');
-        return;
-      }
+
       const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/register', {
         method: 'POST',
         headers: {
@@ -57,33 +53,19 @@ const RegistrationPage = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    let updatedValue = value;
-  
-    if (name === 'mobileNumber') {
-      updatedValue = value.replace(/\D/g, '');
-      updatedValue = updatedValue.slice(0, 10);
-    }
-  
-    setFormData({ ...formData, [name]: updatedValue });
+    setFormData({ ...formData, [name]: value });
   };
+
   return (
     <div>
-    <input
-  className={`${styles.number} ${formData.mobileNumber.length !== 10 && styles.invalidInput}`}
-  type="text"
-  id="mobile"
-  name="mobileNumber"
-  value={formData.mobileNumber}
-  onChange={handleChange}
-/>
-      <div className={styles.upper}> 
-        <img className={styles.logoimg} src="logo.png" alt="Logo" /> 
-        <h2 className={styles.paragraph}>Musicart</h2> 
+      <div className={styles.upper}> {/* Use styles.upper */}
+        <img className={styles.logoimg} src="logo.png" alt="Logo" /> {/* Use styles.logoimg */}
+        <h2 className={styles.paragraph}>Musicart</h2> {/* Use styles.paragraph */}
       </div>
-      <div className={styles.container}> 
-        <h1 className={styles.Accheader}>Create Account</h1> 
+      <div className={styles.container}> {/* Use styles.container */}
+        <h1 className={styles.Accheader}>Create Account</h1> {/* Use styles.Accheader */}
         <form>
-          <label className={styles.inputLabela}> 
+          <label className={styles.inputLabela}> {/* Use styles.inputLabela */}
             Your name
           </label><br />
           <input className={styles.placea} 
@@ -93,7 +75,7 @@ const RegistrationPage = () => {
             value={formData.username}
             onChange={handleChange}
           /><br />
-          <label className={styles.mobile}> 
+          <label className={styles.mobile}> {/* Use styles.mobile */}
             Mobile Number
           </label>
           <input className={styles.number}
@@ -103,7 +85,7 @@ const RegistrationPage = () => {
             value={formData.mobileNumber}
             onChange={handleChange}
           /><br />
-          <label className={styles.mail} htmlFor="email"> 
+          <label className={styles.mail} htmlFor="email"> {/* Use styles.mail */}
             Email ID
           </label>
           <input className={styles.identity}
@@ -113,10 +95,10 @@ const RegistrationPage = () => {
             value={formData.email}
             onChange={handleChange}
           /><br />
-          <label className={styles.pass}>
+          <label className={styles.pass}> {/* Use styles.pass */}
             Password
           </label>
-          <div className={styles.passwordField}> 
+          <div className={styles.passwordField}> {/* Use styles.passwordField */}
             <input className={styles.word}
               name="password"
               id="password"
@@ -125,21 +107,21 @@ const RegistrationPage = () => {
               onChange={handleChange}
             />
           </div>
-          <p className={styles.info}> 
+          <p className={styles.info}> {/* Use styles.info */}
             By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Musicart. Message and data rates may apply.
           </p>
-          <button type="button" className={styles.thebutton} onClick={handleRegistration}>Continue</button> 
-          <p className={styles.notice}> 
+          <button type="button" className={styles.thebutton} onClick={handleRegistration}>Continue</button> {/* Use styles.thebutton */}
+          <p className={styles.notice}> {/* Use styles.notice */}
             By continuing, you agree to Musicart privacy notices and conditions of use.
           </p>
         </form>
       </div>
-      <p className={styles.ask}> 
+      <p className={styles.ask}> {/* Use styles.ask */}
         Already have an account?{' '}
-        <a className={styles.link} onClick={() => navigate('/')}>Sign in</a> 
+        <a className={styles.link} onClick={() => navigate('/login')}>Sign in</a> {/* Use styles.link */}
       </p>
-      {error && <div className={styles.errorMessage}>{error}</div>} 
-      <p className={styles.footerarea}>Musicart | All rights reserved</p> 
+      {error && <div className={styles.errorMessage}>{error}</div>} {/* Use styles.errorMessage */}
+      <p className={styles.footerarea}>Musicart | All rights reserved</p> {/* Use styles.footerarea */}
     </div>
   );
 };
