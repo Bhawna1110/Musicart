@@ -43,7 +43,7 @@ const RegistrationPage = () => {
 
       if (response.ok) {
         setError('');
-        navigate('/login');
+        navigate('/');
       } else {
         console.error('Registration failed:', data.error || 'Internal server error');
         setError(data.error || 'Internal server error');
