@@ -208,9 +208,13 @@ font-size: 23px;
 font-weight: 550;
 margin-left: 580px;
 gap:0;
-margin-top: -90px;
+margin-top: -100px;
 }
+.quantityDropdown{
+  width: 100px;
+  margin-left: 580px;
 
+}
 
  
 
