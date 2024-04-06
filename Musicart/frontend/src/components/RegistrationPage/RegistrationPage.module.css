@@ -113,7 +113,7 @@ margin-top: -25px;
   width:350px;
 }
 
- .theButton {
+ .thebutton {
   font-size: 18px;
   color: #FFFFFF;
   background: #2E0052;
@@ -127,7 +127,9 @@ height: 42px;
 font-family: Roboto;
 margin-bottom: -10px;
 }
-
+.invalidInput {
+  border: 1px solid red;
+}
 .notice{
   font-family: Roboto;
 font-size: 15px;

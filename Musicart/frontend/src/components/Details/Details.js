@@ -104,7 +104,10 @@ const Details = () => {
   }
 };
 
+const handleBuyNow = async () => {
 
+    navigate('/cart');
+  }
 
 
 
@@ -136,8 +139,8 @@ const Details = () => {
         <p className={styles.cartOption}>
           Home/View Cart
         </p>
-        <button className={styles.cartButton}>
-          <img className={styles.picture} src="viewcart.png" />
+        <button className={styles.cartButton} onClick={() => navigate('/cart')}>
+          
           View Cart
         </button>
         </div>
@@ -153,6 +156,8 @@ const Details = () => {
       {product && ( 
         <div className={styles.productDetails}>       
           <h2>{product.about}</h2>
+          <div className={styles.pageContainer}>
+            <div className={styles.leftSection}>
           <div className={styles.imageGallery}>
             <img className={styles.mainImage} src={selectedImage} alt={product.name} />
             <div className={styles.smallImages}>
@@ -168,6 +173,8 @@ const Details = () => {
               ))}
             </div>
           </div>
+          </div>
+          <div className={styles.rightSection}>
           <p className={styles.name}>{product.name}</p>
           <p className={styles.ratings}>{product.ratings}</p> <p className={styles.review}>  {product.review}</p>
           <p className={styles.price}>Price: ₹{Number(product.price).toLocaleString()}</p>
@@ -176,7 +183,9 @@ const Details = () => {
           <p className={styles.avail}><b>Available:</b> {product.available}</p>
           <p className={styles.avail}><b>Brand:</b> {product.brand }</p>
           <button className={styles.addToCartButton} onClick={() => handleAddToCart(product._id)}>Add to Cart</button><br></br>
-          <button className={styles.BuyNowButton}>Buy Now</button>
+          <button className={styles.BuyNowButton}onClick={() => handleBuyNow()}>Buy Now</button>
+        </div>
+        </div>
         </div>
       )}
       <footer className={styles.bottom}>

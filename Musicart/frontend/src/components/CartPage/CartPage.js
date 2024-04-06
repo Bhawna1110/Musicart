@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CartPage.module.css'; 
+
+
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,14 +74,14 @@ const CartPage = () => {
   };
 
   const handlePlaceOrder = () => {
-    navigate('/checkout');
+    navigate('/CheckoutPage');
   };
 
 
   const calculateOrderTotal = () => {
-    // Calculate order total (total amount + delivery charge or any other charges)
+    
     const convienceCharge = 45;
-    const deliveryCharge = 45; // Example delivery charge
+    
     const total = totalAmount + convienceCharge;
     setOrderTotal(total);
   };
@@ -148,7 +150,7 @@ const CartPage = () => {
           Home/View Cart
         </p>
         <button className={styles.cartButton}>
-          <img className={styles.picture} src="viewcart.png" alt="Cart Icon" />
+          <img className={styles.picture} onClick={() => navigate('/dashboard')} src="viewcart.png" alt="Cart Icon" />
           View Cart
         </button>
         </div>
@@ -180,7 +182,7 @@ const CartPage = () => {
 
   <div className={styles.quantityContainer}>
     <p className={styles.quantityTitle}>Quantity</p>
-    <select className={styles.quantityDropdown} value={item.quantity} style={{ width: '50px' }} onChange={(e) => handleQuantityChange(item._id, e.target.value)}>
+    <select className={styles.quantityDropdown} value={item.quantity} style={{ width: '50px'}} onChange={(e) => handleQuantityChange(item._id, e.target.value)}>
       {[...Array(8)].map((_, index) => (
         <option key={index + 1} value={index + 1}>{index + 1}</option>
       ))}
@@ -203,12 +205,13 @@ const CartPage = () => {
         
         
         <p className={styles.convenienceFee}>Convenience Fee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹45</p>
-      
+        
         <p className={styles.totalAmount}>Total Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹{totalAmount + 45}</p>
         <div className={styles.separatorHori}></div>
         <button className={styles.placeOrder} onClick={handlePlaceOrder}>
         PLACE ORDER
-      </button>  
+      </button> 
+       
         </div>
         
     
@@ -216,7 +219,7 @@ const CartPage = () => {
       <div className={styles.end}>
        
        <p className={styles.amt} >₹{totalAmount + 45}</p>
-       <p className={styles.orderTotal}>Order Total: <span className={styles.totalRed}>${orderTotal}</span></p>
+
       
       </div>
       

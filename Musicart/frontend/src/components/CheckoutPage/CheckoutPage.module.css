@@ -1,0 +1,441 @@
+
+.carthead {
+    position: relative;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1px;
+    width: 100%; 
+    height: 40px;
+    background: #2E0052;
+  }
+  .mobNumber {
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  .phone{
+    height:21px;
+    width:21px;
+  margin-top: 7px;
+  margin-left: 35px;
+  padding: 3.35px 3.35px 4.38px 4.38px;
+  }
+  
+.emptyCart {
+    height: 20px;
+  }
+  
+  .logoCart {
+    display: flex;
+    margin-left: 10px;
+    
+  }
+  
+  .cartLogo {
+    width: 176px;
+    height: 52px;
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 600;
+    color: #2E0052 !important;
+   
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  .cartOption {
+    margin-top: 22px;
+    margin-left: -15px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  .phoneNumber{
+    color: #fff;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .discountOffer {
+  font-size: 22px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #FFFFFF;
+  margin-left: 350px;
+  }
+  
+  
+  .userOptions {
+    position: absolute; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    margin-right: 5px; 
+    font-size: 16px; 
+  }
+  
+  .userOptions span:last-child {
+    margin-right: 0; 
+  }
+  
+  .userOptions span {
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+  .picture {
+    width: 23px;
+    height: 22px;
+  }
+  
+  
+  .backToProducts {
+    width: 221px;
+  height: 39px;
+    margin-top: 27px;
+    margin-left: 74px;
+    border: none;
+    border-radius: 10px;
+    background: hsl(274, 100%, 16%);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32.96px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .checkoutPage {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .logoSection {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .cartOption span {
+    font-weight: bold;
+    color: #2E0052;
+  }
+  
+  .backToCart {
+    background-color: #2E0052;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .checkoutTitle {
+    color: #2E0052;
+  }
+  .section1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sectionTitle1 {
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+  }
+  
+  .sectionTitle3 {
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+
+  .deliveryAddress{
+    width: 378px;
+height: 42px;
+margin-left: 181px;
+margin-top: 80px;
+
+  }
+  .deliveryAddress label{
+    font-family: Roboto;
+font-size: 22px;
+color: #797979;
+
+  }
+  .section1 {
+    margin-bottom: 30px;
+  }
+  .summaryDivider {
+    width: 950px; 
+    margin-left: 0px;
+
+  }
+  .section3 {
+    margin-bottom: 30px;
+  }
+  .checkoutTitle {
+   color: #000000;
+text-decoration: underline;
+
+margin-top: 41px;
+margin-left: 579px;
+
+  }
+  .sectionTitle1{
+    width: 316px;
+height: 42px;
+margin-top: 82px;
+margin-left: 45px;
+font-family: Roboto;
+font-size: 32px;
+font-weight: 550;
+line-height: 41.55px;
+text-align: left;
+color: #B52B00;
+
+  }
+  .sectionTitle3{
+    width: 316px;
+height: 42px;
+margin-top: 2px;
+margin-left: 45px;
+font-family: Roboto;
+font-size: 32px;
+font-weight: 550;
+line-height: 41.55px;
+text-align: left;
+color: #B52B00;
+
+  }
+  .sectionTitle2{
+    width: 316px;
+height: 42px;
+margin-top: 42px;
+margin-left: 45px;
+font-family: Roboto;
+font-size: 32px;
+font-weight: 550;
+line-height: 41.55px;
+text-align: left;
+color: #B52B00;
+
+  }
+  .deliveryAddress input {
+    width: 300px;
+    padding: 5px;
+  }
+  
+  .paymentMethod select {
+    width: 200px;
+    padding: 5px;
+   color: #797979;
+   font-family: Roboto;
+
+
+  }
+  
+  .reviewItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .section2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sectionTitle2 {
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+ 
+  
+
+  .deliveryAddress{
+    width: 378px;
+height: 42px;
+margin-left: 181px;
+margin-top: 80px;
+
+  }
+  .deliveryAddress label{
+    font-family: Roboto;
+font-size: 22px;
+color: #797979;
+
+  }
+  .section2 {
+    margin-bottom: 30px;
+  }
+  
+ 
+  .placeOrderButton {
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  
+  .orderAgreement {
+ margin-top: -20px;
+    font-size: 12px;
+    color: #808080;
+    margin-left: 200px;
+  }
+  
+  .horizontalLine {
+    border-top: 2px solid #808080;
+    margin: 30px 0;
+  }
+  
+  .orderSummary {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    height: 290px;
+    transform: translateY(-50%);
+    width: 250px; /* Adjust width as needed */
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .paymentMethod{
+    font-family: Roboto;
+    font-size: 22px;
+    color: #797979;
+    width: 378px;
+height: 42px;
+margin-left: 181px;
+margin-top: 40px;  
+}
+
+  .summaryTitle {
+    color: #000000;
+
+    margin-bottom: 10px;
+  }
+  
+  .summaryDetails {
+    /* border: 1px solid #808080;
+    padding: 10px; */
+    margin-bottom: 10px;
+  }
+  
+  .totalAmount,
+  .orderTotal {
+    margin-bottom: 5px;
+  }
+  .orderAgreement1{
+    font-family: Roboto;
+font-size: 15px;
+margin-left: 40px;
+
+  }
+  .totalRed {
+    color: #FF0000;
+  }
+  
+  .productItem {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .productImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .productName {
+    font-weight: bold;
+  }
+  
+  .productColor {
+    color: #808080;
+  }
+  
+  .estimatedDelivery {
+    margin-top: 10px;
+  }
+  
+  .deliveryInfo {
+    font-style: italic;
+  }
+  .itemTotal{
+    font-family: Roboto;
+font-size: 21px;
+
+  }
+  .productGrid {
+    display: flex;
+    flex-wrap: wrap;
+border: 2px solid grey;
+border-radius: 4px;
+
+  }
+  
+  .productItem {
+    flex-basis: calc(33.33% - 10px); /* Adjust percentage as needed */
+    margin-bottom: -10px; /* Adjust margin as needed */
+    margin-right: -120px; /* Adjust margin as needed */
+  }
+  
+  .productImage {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    object-fit: cover;
+    margin-bottom: 1px;
+  }
+  
+  .selectedItemDetails {
+    margin-top: 10px;
+    display: block !important;
+    font-family: Roboto;
+font-size: 23px;
+
+  }
+  
+  
+  .productItem:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  .horizontalLine {
+    border-top: 2px solid #808080;
+    margin: 30px 0;
+  }
+  

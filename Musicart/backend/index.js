@@ -208,7 +208,7 @@ app.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ userId: user._id, email: user.email, username: user.username }, 'rajna2378999##@679789fvg', {
-      expiresIn: '1h',
+      expiresIn: '10h',
     });
     console.log('Generated token:', token);
 

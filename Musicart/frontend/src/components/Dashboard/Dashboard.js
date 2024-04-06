@@ -77,32 +77,32 @@ const Dashboard = () => {
   };
   const applyFilters = (filters) => {
     let filtered = [...products];
-
+  
     if (filters.searchQuery) {
       filtered = filtered.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-
-    if (filters.headphoneType) {
+  
+    if (filters.headphoneType && filters.headphoneType !== 'Featured') {
       filtered = filtered.filter(product => product.type.toLowerCase() === filters.headphoneType.toLowerCase());
     }
-
-    if (filters.companyFeatured) {
+  
+    if (filters.companyFeatured && filters.companyFeatured !== 'Featured') {
       filtered = filtered.filter(product => product.brand.toLowerCase() === filters.companyFeatured.toLowerCase());
     }
-
-    if (filters.color) {
+  
+    if (filters.color && filters.color !== 'Featured') {
       filtered = filtered.filter(product => product.color.toLowerCase() === filters.color.toLowerCase());
     }
-
-    if (filters.price) {
+  
+    if (filters.price && filters.price !== 'Featured') {
       const [minPrice, maxPrice] = filters.price.split('-');
       filtered = filtered.filter(product =>
         product.price >= parseFloat(minPrice) && product.price <= parseFloat(maxPrice)
       );
     }
-
+  
     if (filters.sortBy) {
       if (filters.sortBy === 'priceLowest') {
         filtered.sort((a, b) => a.price - b.price);
@@ -114,10 +114,13 @@ const Dashboard = () => {
         filtered.sort((a, b) => b.name.localeCompare(a.name));
       }
     }
-
+  
+    if (filters.featured) {
+      filtered = shuffleArray(filtered); // Shuffle the array to arrange items randomly
+    }
+  
     setFilteredProducts(filtered);
   };
-
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
     applyFilters({ ...filters, searchQuery: e.target.value });
@@ -282,21 +285,21 @@ const Dashboard = () => {
         <div className={styles.filters}>
           <select id={styles.select1} onChange={(e) => handleFilterChange('headphoneType', e.target.value)}>
             <option value="">Headphone type</option>
-            <option value="">Featured</option>
+            <option value="Featured">Featured</option>
             <option value="In-Ear headphone">In-ear headphone</option>
             <option value="On-Ear headphone">On-ear headphone</option>
             <option value="Over-Ear headphone">Over-ear headphone</option>
           </select>
           <select id={styles.select2} onChange={(e) => handleFilterChange('companyFeatured', e.target.value)}>
             <option value="">Company</option>
-            <option value="">Featured</option>
+            <option value="Featured">Featured</option>
             <option value="jbl">JBL</option>
             <option value="sony">Sony</option>
             <option value="boat">Boat</option>
           </select>
           <select id={styles.select3} onChange={(e) => handleFilterChange('color', e.target.value)}>
             <option value="">Color</option>
-            <option value="">Featured</option>
+            <option value="Featured">Featured</option>
             <option value="blue">Blue</option>
             <option value="black">Black</option>
             <option value="white">White</option>
@@ -304,14 +307,16 @@ const Dashboard = () => {
           </select>
           <select id={styles.select4} onChange={(e) => handleFilterChange('price', e.target.value)}>
             <option value="">Price</option>
-            <option value="">Featured</option>
+            <option value="Featured">Featured</option>
+           
+            
             <option value="0-1000">₹0-₹1,000</option>
             <option value="1000-10000">₹1,000-₹10,000</option>
             <option value="10000-20000">₹10,000-₹20,000</option>
           </select>
           <select id={styles.select5} onChange={(e) => handleSortByChange(e.target.value)}>
             <option value="">Sort by: Featured</option>
-            <option value="">Featured</option>
+            <option value="Featured">Featured</option>
             <option value="priceLowest">Price: Lowest</option>
             <option value="priceHighest">Price: Highest</option>
             <option value="nameAZ">Name: A-Z</option>
@@ -328,7 +333,7 @@ const Dashboard = () => {
           <div className={styles.gridClickOverlay} onClick={() => handleDetailsButtonClick(product._id)}></div>
         )}
               <div className={styles.upperSection}>
-                <img src={product.image} alt={product.name} className={styles.productImage} />
+                <img src={product.image} alt={product.name} className={styles.productImage} onClick={() => handleDetailsButtonClick(product._id)} />
                 <div className={styles.upperSectionInner}>
                   <button className={styles.addToCartButton} onClick={() => handleAddToCart(product._id)}><img src="cart.png" alt="Add to Cart" /></button>
                 </div>
