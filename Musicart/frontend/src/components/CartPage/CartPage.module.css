@@ -293,16 +293,12 @@ font-weight: 500;
   color: black;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 20px;
   font-family: Roboto;
   font-size: 18px;
   font-weight: 550;
   width: 226px;
 height: 47px;
 border-radius: 11px;
-opacity: 0px;
-margin-left: 950px;
-margin-bottom: 20px;
 }
 
 .bottom{
