@@ -207,9 +207,8 @@
 
 .place-order {
   background-color: yellow;
-  color: yellow;
-  border: none;
   color: black;
+  border: none;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 20px;
