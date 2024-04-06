@@ -182,7 +182,7 @@ const CartPage = () => {
 
   <div className={styles.quantityContainer}>
     <p className={styles.quantityTitle}>Quantity</p>
-    <select className={styles.quantityDropdown} value={item.quantity} style={{ width: '50px'}} onChange={(e) => handleQuantityChange(item._id, e.target.value)}>
+    <select className={styles.quantityDropdown} value={item.quantity} onChange={(e) => handleQuantityChange(item._id, e.target.value)}>
       {[...Array(8)].map((_, index) => (
         <option key={index + 1} value={index + 1}>{index + 1}</option>
       ))}
@@ -217,7 +217,7 @@ const CartPage = () => {
     
    
       <div className={styles.end}>
-       
+ 
        <p className={styles.amt} >₹{totalAmount + 45}</p>
 
       
