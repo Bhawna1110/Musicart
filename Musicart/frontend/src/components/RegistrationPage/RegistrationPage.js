@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './RegistrationPage.module.css'; // Import CSS module
+import styles from './RegistrationPage.module.css';
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -58,14 +58,14 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <div className={styles.upper}> {/* Use styles.upper */}
-        <img className={styles.logoimg} src="logo.png" alt="Logo" /> {/* Use styles.logoimg */}
-        <h2 className={styles.paragraph}>Musicart</h2> {/* Use styles.paragraph */}
+      <div className={styles.upper}>
+        <img className={styles.logoimg} src="logo.png" alt="Logo" /> 
+        <h2 className={styles.paragraph}>Musicart</h2> 
       </div>
-      <div className={styles.container}> {/* Use styles.container */}
-        <h1 className={styles.Accheader}>Create Account</h1> {/* Use styles.Accheader */}
+      <div className={styles.container}> 
+        <h1 className={styles.Accheader}>Create Account</h1> 
         <form>
-          <label className={styles.inputLabela}> {/* Use styles.inputLabela */}
+          <label className={styles.inputLabela}>
             Your name
           </label><br />
           <input className={styles.placea} 
@@ -75,7 +75,7 @@ const RegistrationPage = () => {
             value={formData.username}
             onChange={handleChange}
           /><br />
-          <label className={styles.mobile}> {/* Use styles.mobile */}
+          <label className={styles.mobile}> 
             Mobile Number
           </label>
           <input className={styles.number}
@@ -85,7 +85,7 @@ const RegistrationPage = () => {
             value={formData.mobileNumber}
             onChange={handleChange}
           /><br />
-          <label className={styles.mail} htmlFor="email"> {/* Use styles.mail */}
+          <label className={styles.mail} htmlFor="email"> 
             Email ID
           </label>
           <input className={styles.identity}
@@ -95,10 +95,10 @@ const RegistrationPage = () => {
             value={formData.email}
             onChange={handleChange}
           /><br />
-          <label className={styles.pass}> {/* Use styles.pass */}
+          <label className={styles.pass}> 
             Password
           </label>
-          <div className={styles.passwordField}> {/* Use styles.passwordField */}
+          <div className={styles.passwordField}>
             <input className={styles.word}
               name="password"
               id="password"
@@ -107,21 +107,21 @@ const RegistrationPage = () => {
               onChange={handleChange}
             />
           </div>
-          <p className={styles.info}> {/* Use styles.info */}
+          <p className={styles.info}>
             By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Musicart. Message and data rates may apply.
           </p>
-          <button type="button" className={styles.thebutton} onClick={handleRegistration}>Continue</button> {/* Use styles.thebutton */}
-          <p className={styles.notice}> {/* Use styles.notice */}
+          <button type="button" className={styles.thebutton} onClick={handleRegistration}>Continue</button> 
+          <p className={styles.notice}> 
             By continuing, you agree to Musicart privacy notices and conditions of use.
           </p>
         </form>
       </div>
-      <p className={styles.ask}> {/* Use styles.ask */}
+      <p className={styles.ask}> 
         Already have an account?{' '}
-        <a className={styles.link} onClick={() => navigate('/login')}>Sign in</a> {/* Use styles.link */}
+        <a className={styles.link} onClick={() => navigate('/login')}>Sign in</a> 
       </p>
-      {error && <div className={styles.errorMessage}>{error}</div>} {/* Use styles.errorMessage */}
-      <p className={styles.footerarea}>Musicart | All rights reserved</p> {/* Use styles.footerarea */}
+      {error && <div className={styles.errorMessage}>{error}</div>} 
+      <p className={styles.footerarea}>Musicart | All rights reserved</p> 
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Details from './components/Details/Details';
 import Order from './components/Order/order'; 
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 import FeedbackForm from './components/Feedback/FeedbackForm';
+import MyInvoice from './components/MyInvoice/MyInvoice';
 import './App.css';
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/feedbackform' element={<FeedbackForm/>}></Route>
         <Route path='/checkoutpage' element={<CheckoutPage/>}></Route>
-      
+        <Route path='/myinvoice' element={<MyInvoice/>}></Route>
       </Routes>
     </BrowserRouter>
   );

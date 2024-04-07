@@ -3,6 +3,7 @@ import styles from './Dashboard.module.css';
 import Details from '../Details/Details';
 import order from '../Order/order';
 import FeedbackForm from '../Feedback/FeedbackForm';
+import MyInvoice from '../MyInvoice/MyInvoice';
 import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
@@ -116,7 +117,7 @@ const Dashboard = () => {
     }
   
     if (filters.featured) {
-      filtered = shuffleArray(filtered); // Shuffle the array to arrange items randomly
+      filtered = shuffleArray(filtered); 
     }
   
     setFilteredProducts(filtered);
@@ -238,8 +239,8 @@ const Dashboard = () => {
         <img className={styles.image} src="logo.png" alt="Logo" />
         <div className={styles.logo}>Musicart</div>
         <div className={styles.options}>
-          <span>Home</span>
-          <span>Invoice</span>
+          <span  onClick={() => navigate('/dashboard')}>Home</span>
+          <span  onClick={() => navigate('/myinvoice')}>Invoice</span>
         </div>
         <button className={styles.viewCartButton} onClick={handleViewCart}>
           <img className={styles.cart} src="viewcart.png" alt="Cart Icon" />

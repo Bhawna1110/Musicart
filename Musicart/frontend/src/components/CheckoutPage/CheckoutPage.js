@@ -53,7 +53,7 @@ const CheckoutPage = () => {
       if (token) {
         setIsLoggedIn(true);
       }
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
+      const response = await fetch('http://localhost:3000/user-data', {
         headers: {
           Authorization: token,
         },
@@ -73,7 +73,7 @@ const CheckoutPage = () => {
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
+      const response = await fetch('http://localhost:3000/cart', {
         headers: {
           Authorization: token,
         },
@@ -97,43 +97,42 @@ const CheckoutPage = () => {
 
 
   const handlePlaceOrder = async () => {
+    try {
+      const orderDetails = {
+        userFullName,
+        cartItems,
+        deliveryAddress,
+        paymentMethod: document.querySelector('.payment-method select').value,
+        orderTotal,
+      };
+  
+      // Send order details to the backend API
+      const response = await fetch('http://localhost:3000/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderDetails),
+      });
+      console.log("body", orderDetails)
+  
+      if (!response.ok) {
+        throw new Error('Failed to place order');
+      }
+
+      const responseData = await response.json();
+    const orderId = responseData.orderId; 
+  
+
+      navigate('/orders');
+    } catch (error) {
+      console.error('Error placing order:', error.message);
+    }
     navigate('/order');
-  }
-//     try {
-//       const orderDetails = {
-//         userFullName,
-//         cartItems,
-//         deliveryAddress,
-//         paymentMethod: document.querySelector('.payment-method select').value,
-//         orderTotal,
-//       };
-      
-//       const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(orderDetails),
-//       });
-//       console.log("body", orderDetails)
-  
-//       if (!response.ok) {
-//         throw new Error('Failed to place order');
-//       }
-
-//       const responseData = await response.json();
-//     const orderId = responseData.orderId; 
-
-      
-//     } catch (error) {
-//       console.error('Error placing order:', error.message);
-//     }
-//   }; //
-
-  
+  };
 
   return (
-    <div className="checkout-page">
+    <div className={styles.checkoutPage}>
       <div className={styles.carthead}>
         <div className={styles.mobNumber}>
           <span><img className={styles.phone} src="phone.png" alt="Phone Icon" /></span>
@@ -230,6 +229,9 @@ const CheckoutPage = () => {
           </div>
         </div>
       </div>
+      <footer className={styles.bottom}>
+        <p>Musicart | All rights reserved</p>
+      </footer>
     </div>
 
   );

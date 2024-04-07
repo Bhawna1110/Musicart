@@ -6,9 +6,12 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const Product = require('./models/Product');
 const CartItem = require('./models/CartItem');
+const Order=require("./models/Order")
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.json());
 const allowedOrigin = 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app';
 
 app.use(express.json());
@@ -250,6 +253,61 @@ app.get('/user-data', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.post('/orders', async (req, res) => {
+  try {
+    // Extract order details from the request body
+    const { userFullName, cartItems, deliveryAddress, paymentMethod, orderTotal } = req.body;
+    console.log("-------------")
+console.log( userFullName, cartItems, deliveryAddress, paymentMethod, orderTotal)
+    // Create a new order document and save it to the database
+    const order = new Order({
+      user: req.user, // Assuming you have middleware to authenticate users
+      items: cartItems,
+      deliveryAddress,
+      paymentMethod,
+      orderTotal,
+    });
+
+    console.log("order",order)
+    await order.save();
+
+    res.status(201).json({ orderId: order._id, message: 'Order placed successfully' });
+  } catch (error) {
+    console.error('Error placing order:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+// GET endpoint to fetch order details for the invoice page
+app.get('/orders/:orderId', async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const order = await Order.findById(orderId);
+
+    if (!order) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+
+    res.status(200).json(order);
+  } catch (error) {
+    console.error('Error fetching order details:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// GET endpoint to fetch all orders
+app.get('/orders', async (req, res) => {
+  try {
+    const orders = await Order.find();
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error('Error fetching orders:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 app.use((err, req, res, next) => {
