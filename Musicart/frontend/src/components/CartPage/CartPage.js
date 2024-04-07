@@ -25,7 +25,7 @@ const CartPage = () => {
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/cart', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
         headers: {
           Authorization: token,
         },
@@ -89,7 +89,7 @@ const CartPage = () => {
     try {
       const newQuantity = parseInt(e.target.value);
       const token = localStorage.getItem('token');
-      const response = await fetch(`ttp://localhost:3000/update-quantity/${itemId}`, {
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/update-quantity/${itemId}`, {
         method: 'PUT',
         headers: {
           Authorization: token,
