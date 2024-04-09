@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import styles from './MyInvoice.module.css'; 
+import styles from './MyInvoice.module.css';
 
 const InvoicesPage = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const InvoicesPage = () => {
 
   const checkLoggedIn = () => {
     const token = localStorage.getItem('token');
-    setIsLoggedIn(!!token); 
+    setIsLoggedIn(!!token);
   };
 
   const handleLogout = () => {
@@ -42,7 +42,7 @@ const InvoicesPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://localhost:3000/orders');
+        const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders');
         if (!response.ok) {
           throw new Error('Failed to fetch orders');
         }
@@ -57,7 +57,7 @@ const InvoicesPage = () => {
     fetchOrders();
   }, []);
 
-  
+
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -84,7 +84,7 @@ const InvoicesPage = () => {
 
   return (
     <div className={styles.invoicesPage}>
-     <div className={styles.carthead}>
+      <div className={styles.carthead}>
         <div className={styles.mobNumber}>
           <span><img className={styles.phone} src="phone.png" alt="Phone Icon" /></span>
           <span className={styles.phoneNumber}>912121131313</span>
@@ -109,13 +109,13 @@ const InvoicesPage = () => {
         <p className={styles.cartOption}>
           Home/View Cart
         </p>
-        </div>
-        
-        <div>
+      </div>
+
+      <div>
         <button className={styles.backToProducts} onClick={() => navigate('/cart')}> Back to Cart</button>
         <h1 className={styles.checkoutTitle}>My Orders</h1>
-</div>
-        
+      </div>
+
       <ul>
         {orders.map(order => (
           <li key={order._id}>
