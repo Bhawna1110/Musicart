@@ -118,7 +118,7 @@ const RegistrationPage = () => {
       </div>
       <p className={styles.ask}> 
         Already have an account?{' '}
-        <a className={styles.link} onClick={() => navigate('/login')}>Sign in</a> 
+        <a className={styles.link} onClick={() => navigate('/')}>Sign in</a> 
       </p>
       {error && <div className={styles.errorMessage}>{error}</div>} 
       <p className={styles.footerarea}>Musicart | All rights reserved</p> 
