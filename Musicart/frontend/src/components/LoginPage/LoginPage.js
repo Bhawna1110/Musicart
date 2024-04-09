@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './LoginPage.module.css'; // Import CSS module
+import styles from './LoginPage.module.css'; 
 import Dashboard from '../Dashboard/Dashboard';
 
 const LoginPage = () => {
@@ -24,7 +24,7 @@ const LoginPage = () => {
 
       const authEndpoint = endpoint || '/login';
 
-      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com${authEndpoint}`, {
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-uyx4.onrender.com${authEndpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
