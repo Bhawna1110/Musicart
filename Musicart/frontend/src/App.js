@@ -10,6 +10,7 @@ import Order from './components/Order/order';
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 import FeedbackForm from './components/Feedback/FeedbackForm';
 import MyInvoice from './components/MyInvoice/MyInvoice';
+import InvoicePage from './components/Invoice/Invoice';
 import './App.css';
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
         <Route path='/feedbackform' element={<FeedbackForm/>}></Route>
         <Route path='/checkoutpage' element={<CheckoutPage/>}></Route>
         <Route path='/myinvoice' element={<MyInvoice/>}></Route>
+    <Route path='/orders/:orderId' element={<InvoicePage />}></Route>
+        <Route path='/invoice' element={<Invoice/>}></Route>
       </Routes>
     </BrowserRouter>
   );
