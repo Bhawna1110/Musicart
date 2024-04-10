@@ -294,7 +294,30 @@ margin-top: 20px;
 @media only screen and (max-width: 768px) {
   
   .carthead, .logoCart, 
-  .backToProducts, .h2, .bottom{
+  .backToProducts, productDetails h2, .bottom{
     display: none;
   }
+  .imageGallery {
+    overflow-x: auto; 
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; \
+  }
+
+  .imageGallery::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .smallImages {
+    display: flex;
+  }
+
+  .smallImage {
+    flex: 0 0 auto;
+    width: 100px; 
+    margin-right: 10px; 
+  }
 }
+
+
