@@ -294,7 +294,7 @@ margin-top: 20px;
 @media only screen and (max-width: 768px) {
   
   .carthead, .logoCart, 
-  .addToCartButton, .bottom{
+  .backToProducts, .h2, .bottom{
     display: none;
   }
 }
