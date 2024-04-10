@@ -37,7 +37,7 @@ const CheckoutPage = () => {
 
 
   const calculateOrderTotalwithConFee = () => {
-    // Calculate order total (total amount + delivery charge or any other charges)
+   
     const TotalwithConFee = orderTotal - 45;
     setOrderTotalwithConFee(TotalwithConFee);
   };
@@ -60,7 +60,7 @@ const CheckoutPage = () => {
       if (token) {
         setIsLoggedIn(true);
       }
-      const response = await fetch('http://localhost:3000/user-data', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
         headers: {
           Authorization: token,
         },
@@ -80,7 +80,7 @@ const CheckoutPage = () => {
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/cart', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
         headers: {
           Authorization: token,
         },
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
       };
 
       // Send order details to the backend API
-      const response = await fetch('http://localhost:3000/orders', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
