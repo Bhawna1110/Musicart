@@ -627,3 +627,33 @@ margin-top: 37px;
    width: 100%; 
 
 }
+@media only screen and (max-width: 768px) {
+  
+  .head, .logoSection, 
+  .addToCartButton{
+    display: none;
+  }
+  .carousel {
+    margin-top: 100px;
+  }
+
+  .searchBar {
+    margin-top: -480px;
+    width: 90%;
+  }
+
+  .searchInput {
+    width: 80%;
+  }
+
+  .filters {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 10px auto;
+  }
+
+  .filters select {
+    margin-right: 10px;
+  }
+
+} 

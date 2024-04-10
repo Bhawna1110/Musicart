@@ -50,7 +50,9 @@ const Details = () => {
   const fetchProductData = async (id) => {
     try {
       console.log('Fetching product data...');
-      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/product/${id}`);
+      // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/product/${id}`);
+      const response = await fetch(`http://localhost:3000/product/${id}`);
+
       const data = await response.json();
       console.log('Product data:', data);
       setProduct(data);
@@ -64,7 +66,9 @@ const Details = () => {
   const fetchCartItemCount = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart/count', {
+      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart/count', {
+      const response = await fetch('http://localhost:3000/cart/count', {
+
         headers: {
           Authorization: token,
         },
@@ -85,7 +89,9 @@ const Details = () => {
   try {
     const token = localStorage.getItem('token');
     const cartItem = { product: productId, quantity: 1 };
-    const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
+    // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
+    const response = await fetch(`http://localhost:3000/add-to-cart/${String(productId)}`, {
+
       method: 'POST',
       headers: {
         Authorization: token,
