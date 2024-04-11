@@ -326,11 +326,12 @@ line-height: 27.45px;
 text-align: center;
 padding-right: 10px;
 appearance: none;  
-background-repeat: no-repeat;
-background-position: calc(100% - 14px) center; 
-background-size: 11px;
-background-position-y: 60%;
-}
+ background-image: url('down.png'); 
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 23px) center; 
+  background-size: 11px;
+  background-position-y: 60%;}
   
 #select2 option[value=""] {
   display: none;
