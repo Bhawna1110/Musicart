@@ -138,7 +138,7 @@ const CheckoutPage = () => {
     navigate('/order');
   };
 
-  return (
+  return  (
     <div className={styles.checkoutPage}>
       <div className={styles.carthead}>
         <div className={styles.mobNumber}>
@@ -169,6 +169,7 @@ const CheckoutPage = () => {
 
       <div>
         <button className={styles.backToProducts} onClick={() => navigate('/cart')}> Back to Cart</button>
+        <button className={styles.backButton} onClick={() => navigate('/dashboard')}> &lt;</button>
         <h1 className={styles.checkoutTitle}>Checkout</h1>
       </div>
 
@@ -244,6 +245,25 @@ const CheckoutPage = () => {
       <footer className={styles.bottom}>
         <p>Musicart | All rights reserved</p>
       </footer>
+      {window.innerWidth <= 767 && (
+        <div className={styles.floatingButtonMenu}>
+          <div className={styles.floatingButton} onClick={() => navigate('/dashboard')}>
+            <img src="home.png" alt="Home" />
+          </div>
+          <div className={styles.floatingButton} onClick={() => navigate('/cart')}>
+            <img src="carticon.png" alt="Cart" />
+          </div>
+          {isLoggedIn ? (
+            <div className={styles.floatingButton} onClick={handleLogout}>
+              <img src="invoice.png" alt="Logout" />
+            </div>
+          ) : (
+            <div className={styles.floatingButton} onClick={handleLogin}>
+              <img src="loginicon.png" alt="Login" />
+            </div>
+          )}
+        </div>
+      )}
     </div>
 
   );
