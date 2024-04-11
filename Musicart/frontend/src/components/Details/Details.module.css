@@ -297,35 +297,66 @@ margin-top: 20px;
    productDetails h2, .bottom{
     display: none;
   }
-  .imageGallery {
-    overflow-x: auto; 
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-  }
 
   .imageGallery::-webkit-scrollbar {
     display: none; 
+    -webkit-overflow-scrolling: touch;
+
   }
 
-  .smallImages {
+  /* .smallImages {
     display: flex;
-  }
+  } */
   .backButton {
     display: inline-block;
   padding: 0px 16px;
   background-color: white;
     color: black;
-
     margin-left: 20px;
     border-radius: 50px;
   }
 
   .smallImage {
-    flex: 0 0 auto;
-    width: 100px; 
-    margin-right: 10px; 
+    display: none; 
+  }
+
+  /* .imageGallery {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  } */
+  
+  .imageGallery::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mainImage {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+
+  .imageIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .imageIndicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+  }
+  
+  .imageIndicator.active {
+    background-color: #2E0052;
   }
 }
 
