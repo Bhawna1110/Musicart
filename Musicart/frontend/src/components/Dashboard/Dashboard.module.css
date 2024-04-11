@@ -717,19 +717,36 @@ margin-top: 37px;
   .productGridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 0px;
+    gap: 1px;
+    padding: 10px;
   }
 
 
   .upperSection {
-    width: 100%;
+    width: 68%;
     height: auto;
+    background-color: #D4E5FF;
+    position: relative;
   }
   .lowerSectionGrid {
     width: 100%;
     height: auto;
-    margin-left: 0;
+    top: 150x;
+    left: 117px;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 1px;
+  }
+
+  .productImage {
+    width: 100px;
+    height: 100px;
+  margin-left: 11px;
+  margin-bottom: 11px;
+  margin-right: 10px;
+  margin-top: 11px;
   }
 
   /* Footer */
@@ -767,7 +784,7 @@ margin-top: 37px;
 
   .viewOptions,
   .productGrid {
-    margin-top: 20px; 
+    margin-top: -10px; 
   }
 
   .feedbackButton {
@@ -798,10 +815,12 @@ margin-top: 37px;
   }
 
 
+
+
   #select5 {
     width: 100%; /* Adjust the width as needed */
     margin-left: 10px; /* Push it to the left */
-}
+  }
 
 
 
@@ -817,11 +836,22 @@ margin-top: 37px;
     z-index: 100;
   }
 
+  .addToCartButton {
+  display: none;
+  }
+
   .floatingButton {
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+  }
+
+  .productItemGrid {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: none;
   }
 
   .floatingButton img {
