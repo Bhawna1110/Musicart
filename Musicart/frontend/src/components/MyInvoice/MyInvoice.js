@@ -121,8 +121,8 @@ const InvoicesPage = () => {
       <ul>
         {orders.map(order => (
           <li key={order._id}>
-            Order ID: {order._id} - Total: ${order.orderTotal}
-            <Link to={`/orders/${order._id}`}>View Invoice</Link>
+            Order ID: {order._id} - Total: ₹{order.orderTotal}
+            <Link to={`/orders/₹{order._id}`}>View Invoice</Link>
           </li>
         ))}
       </ul>
