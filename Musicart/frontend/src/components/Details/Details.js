@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './Details.module.css';
 import { useNavigate } from 'react-router-dom';
-import { useSwipeable } from 'react-swipeable';
+
 
 
 const Details = () => {
@@ -50,8 +50,8 @@ const Details = () => {
   const fetchProductData = async (id) => {
     try {
       console.log('Fetching product data...');
-      // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/product/${id}`);
-      const response = await fetch(`http://localhost:3000/product/${id}`);
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/product/${id}`);
+      // const response = await fetch(`http://localhost:3000/product/${id}`);
 
       const data = await response.json();
       console.log('Product data:', data);
@@ -89,8 +89,8 @@ const Details = () => {
     try {
       const token = localStorage.getItem('token');
       const cartItem = { product: productId, quantity: 1 };
-      // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
-      const response = await fetch(`http://localhost:3000/add-to-cart/${String(productId)}`, {
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
+      // const response = await fetch(`http://localhost:3000/add-to-cart/${String(productId)}`, {
 
         method: 'POST',
         headers: {
@@ -168,7 +168,6 @@ const Details = () => {
           <div className={styles.pageContainer}>
             <div className={styles.leftSection}>
               <div className={styles.imageGallery}>
-                
                 <img className={styles.mainImage} src={selectedImage} alt={product.name} />
                 <div />
                 <div className={styles.imageIndicators}>
