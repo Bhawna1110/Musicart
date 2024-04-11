@@ -12,8 +12,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
-// const allowedOrigin = 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app';
-const allowedOrigin = 'http://localhost:3001';
+const allowedOrigin = 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app';
+
 
 
 app.use(express.json());
@@ -258,11 +258,11 @@ app.get('/user-data', async (req, res) => {
 
 app.post('/orders', async (req, res) => {
   try {
-    // Extract order details from the request body
+
     const { userFullName, cartItems, deliveryAddress, paymentMethod, orderTotal } = req.body;
     console.log("-------------")
 console.log( userFullName, cartItems, deliveryAddress, paymentMethod, orderTotal)
-    // Create a new order document and save it to the database
+
     const order = new Order({
       user: req.user, // Assuming you have middleware to authenticate users
       items: cartItems,
@@ -282,7 +282,7 @@ console.log( userFullName, cartItems, deliveryAddress, paymentMethod, orderTotal
 });
 
 
-// GET endpoint to fetch order details for the invoice page
+
 app.get('/orders/:orderId', async (req, res) => {
   try {
     const { orderId } = req.params;
@@ -299,7 +299,7 @@ app.get('/orders/:orderId', async (req, res) => {
   }
 });
 
-// GET endpoint to fetch all orders
+
 app.get('/orders', async (req, res) => {
   try {
     const orders = await Order.find();
