@@ -448,7 +448,7 @@ font-size: 23px;
     border-top: 2px solid #808080;
     margin: 30px 0;
   }
-  
+
 @media only screen and (max-width: 768px) {
   
   .carthead,  
@@ -456,17 +456,90 @@ font-size: 23px;
     display: none;
 
   }
-
-  .logoCart {
+  .orderSummary, .summaryDetails{
+    display: none;
+  }
+  .section1,
+  .section2 {
+    display: block;
+    margin-top: 10px; 
+    margin-left: 10px;
+  }
+  
+  .floatingButtonMenu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    align-items: center; 
-    padding: -10px; 
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .floatingButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .floatingButton img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .floatingButton span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .sectionTitle2 {
+    margin-right: 10px; 
+
+    margin-bottom: 100px;
+  }
+  
+ 
+  
+
+  .deliveryAddress{
+    width: 378px;
+height: 42px;
+margin-left: 81px;
+margin-top: 80px;
+
+  }
+  .deliveryAddress label{
+    font-family: Roboto;
+font-size: 22px;
+color: #797979;
+
+  }
+  
+  .logoCart {
+    display: flex; /* Ensure items are displayed in a flex container */
+    align-items: center; /* Align items vertically */
+    padding: -10px; /* Add padding */
     background-color:  #2E0052;
-    color: white;
+    color: white;/* Add background color */
+}
+
+.backButton {
+  display: inline-block;
+padding: 0px 16px;
+background-color: white;
+  color: black;
+height: 40px;
+  margin-left: 20px;
+  border-radius: 50px;
+}
+.checkoutTitle{
+  margin-left: 30px;
 }
 
 .cartImage{
-      margin: 0; 
+      margin: 0; /* Remove margins */
     margin-left: 0px; 
 }
 
