@@ -60,7 +60,7 @@ const CheckoutPage = () => {
       if (token) {
         setIsLoggedIn(true);
       }
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/user-data', {
         headers: {
           Authorization: token,
         },
@@ -80,7 +80,7 @@ const CheckoutPage = () => {
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/cart', {
         headers: {
           Authorization: token,
         },
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
       };
 
  
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
