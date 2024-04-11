@@ -175,15 +175,15 @@ margin-bottom: -10px;
   
 
   .logoCart {
-    display: flex; /* Ensure items are displayed in a flex container */
-    align-items: center; /* Align items vertically */
-    padding: -10px; /* Add padding */
+    display: flex; 
+    align-items: center; 
+    padding: -10px; 
     background-color:  #2E0052;
-    color: white;/* Add background color */
+    color: white;
 }
 
 .cartImage{
-      margin: 0; /* Remove margins */
+      margin: 0; 
     margin-left: 0px; 
 }
 
