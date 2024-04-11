@@ -305,7 +305,7 @@ font-weight: 500;
  width: 100%; 
 
 }
-.searchIcon, .searchInput, .searchBar{
+.searchIcon, .searchInput, .searchBar, .backButton{
   display:none;
 }
 
