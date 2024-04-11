@@ -144,6 +144,7 @@ const InvoicePage = () => {
         </div>
       </div>
       <hr className={styles.summaryDivider} />
+            <h2 className={styles.sectionTitle3}>3. Review Items and Delivery</h2>
       <div className={styles.section3}>
         <div className={styles.productGrid}>
           {order.items.map((item, index) => (
