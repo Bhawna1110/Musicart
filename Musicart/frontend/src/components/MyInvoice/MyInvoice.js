@@ -42,8 +42,8 @@ const InvoicesPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders');
-        const response = await fetch('http://localhost:3000/orders');
+        const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders');
+        
 
         if (!response.ok) {
           throw new Error('Failed to fetch orders');
@@ -66,7 +66,7 @@ const InvoicesPage = () => {
       if (token) {
         setIsLoggedIn(true);
       }
-      const response = await fetch('http://localhost:3000/user-data', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
         headers: {
           Authorization: token,
         },
