@@ -115,7 +115,7 @@ const InvoicesPage = () => {
 
       <div>
         <button className={styles.backToProducts} onClick={() => navigate('/cart')}> Back to Cart</button>
-        <h1 className={styles.checkoutTitle}>My Orders</h1>
+        <h1 className={styles.checkoutTitle}>My Invoices</h1>
       </div>
 
       <ul>
