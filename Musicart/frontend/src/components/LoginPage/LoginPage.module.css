@@ -133,8 +133,9 @@ font-size: 16px !important;
 font-weight: 500 !important;
 color: #FFFFFF !important;
   background: #2E0052 !important;
-  height: 35px;
+  height: 55px;
   text-align: center;
+  margin-top: 70px;
 }
 
 .note{
