@@ -24,7 +24,7 @@ const LoginPage = () => {
 
       const authEndpoint = endpoint || '/login';
 
-      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-uyx4.onrender.com${authEndpoint}`, {
+      const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com${authEndpoint}`, {
       
 
         method: 'POST',
