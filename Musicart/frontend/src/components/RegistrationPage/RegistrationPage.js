@@ -26,7 +26,7 @@ const RegistrationPage = () => {
         return;
       }
 
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-uyx4.onrender.com/register', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/register', {
 
 
         method: 'POST',
