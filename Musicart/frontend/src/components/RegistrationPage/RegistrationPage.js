@@ -26,14 +26,13 @@ const RegistrationPage = () => {
         return;
       }
 
-      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/register', {
-      const response = await fetch('http://localhost:3000/register', {
+      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/register', {
+
 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Origin': 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app'
-          'Origin': 'http://localhost:3001'
+          'Origin': 'https://sumanbhawna11-gmail-com-cuvette-final-evaluation-august1.vercel.app'
 
         },
         body: JSON.stringify({ username, mobileNumber, email, password }),
