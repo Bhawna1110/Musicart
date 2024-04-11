@@ -162,28 +162,37 @@ margin-bottom: 10px;
 .new-user-link:hover {
   text-decoration: underline;
 }
+
  
 @media only screen and (max-width: 768px) {
   
   
 
-  .logoCart {
+  .logoContainer {
     display: flex; /* Ensure items are displayed in a flex container */
     align-items: center; /* Align items vertically */
     padding: -10px; /* Add padding */
     background-color:  #2E0052;
-    color: white;/* Add background color */
+    height: 50px;
 }
 
-.cartImage{
+.logoImage{
       margin: 0; /* Remove margins */
-    margin-left: 0px; 
+    margin-left: 0px; /* Add right margin */
 }
 
-.cartLogo {
+.paratext {
     margin: 20px 0 0;
     color: white !important;
-    font-size: 25px;
-
-
-}}
+    font-size: 20px;
+}
+.newContainer {
+  max-width: 400px;
+  height: 170px;
+  margin-top: 40px;
+  
+}
+.footer{
+ margin-right: 10px;
+}
+}
