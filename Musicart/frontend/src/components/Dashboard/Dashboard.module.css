@@ -287,6 +287,13 @@ font-weight: 550;
 line-height: 27.45px;
 text-align: center;
 appearance: none; 
+   background-image: url('down.png'); 
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 23px) center; 
+  background-size: 11px;
+  background-position-y: 60%;
+  
 }
 
 #select1 option[value=""] {
@@ -357,7 +364,8 @@ background-position-y: 60%;
   line-height: 27.45px;
   text-align: center;
   appearance: none; 
-
+ background-image: url('down.png'); 
+  padding-right: 10px;
   background-repeat: no-repeat;
   background-position: calc(100% - 14px) center; /* Move arrow a little to the left */
   background-size: 11px;
@@ -396,10 +404,12 @@ text-align: center;
 appearance: none; 
 padding-right: 10px;
 
-background-repeat: no-repeat;
-background-position: calc(100% - 13px) center; 
-background-size: 11px;
-background-position-y: 60%;
+ background-image: url('down.png'); 
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 23px) center; 
+  background-size: 11px;
+  background-position-y: 60%;
 }
   
 #select4 option[value=""] {
