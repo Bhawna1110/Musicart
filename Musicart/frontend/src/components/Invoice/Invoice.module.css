@@ -21,6 +21,8 @@
   margin-left: 35px;
   padding: 3.35px 3.35px 4.38px 4.38px;
       background-image: url('phone.png');
+        background-repeat:no-repeat;
+  background-size: cover;
   }
   
 .emptyCart {
@@ -132,6 +134,8 @@
   }
   .cartImage{
   background-image: url('logo.png');
+        background-repeat:no-repeat;
+  background-size: cover;
   }
   .logo {
     width: 50px;
