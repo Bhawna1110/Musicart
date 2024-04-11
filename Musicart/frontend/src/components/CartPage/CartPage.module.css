@@ -305,7 +305,9 @@ font-weight: 500;
  width: 100%; 
 
 }
-
+.searchIcon, .searchInput, .searchBar{
+  display:none;
+}
 
 @media only screen and (max-width: 768px) {
   
