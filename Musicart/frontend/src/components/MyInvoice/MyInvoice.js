@@ -42,8 +42,8 @@ const InvoicesPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders');
-        
+        // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders');
+        const response = await fetch('http://localhost:3000/orders');
 
         if (!response.ok) {
           throw new Error('Failed to fetch orders');

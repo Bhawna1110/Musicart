@@ -169,3 +169,28 @@ margin-bottom: -10px;
   text-align: left;
   margin-top: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+  
+  
+
+  .logoCart {
+    display: flex; /* Ensure items are displayed in a flex container */
+    align-items: center; /* Align items vertically */
+    padding: -10px; /* Add padding */
+    background-color:  #2E0052;
+    color: white;/* Add background color */
+}
+
+.cartImage{
+      margin: 0; /* Remove margins */
+    margin-left: 0px; 
+}
+
+.cartLogo {
+    margin: 20px 0 0;
+    color: white !important;
+    font-size: 25px;
+
+
+}}

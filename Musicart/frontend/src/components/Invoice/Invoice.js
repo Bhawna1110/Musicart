@@ -45,7 +45,7 @@ const InvoicePage = () => {
     const fetchOrderDetails = async () => {
       try {
         console.log(orderId)
-        const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/orders/${orderId}`);
+        const response = await fetch(`http://localhost:3000/orders/${orderId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch order details');
         }
@@ -64,7 +64,7 @@ const InvoicePage = () => {
         if (token) {
           setIsLoggedIn(true);
         }
-        const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
+        const response = await fetch('http://localhost:3000/user-data', {
           headers: {
             Authorization: token,
           },

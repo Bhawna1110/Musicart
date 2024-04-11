@@ -84,9 +84,64 @@ font-size: 20px;
   background-color: #eee;
 }
 
-.last {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 20px;
-  text-align: right;
+@media screen and (max-width: 768px) {
+  .orderContainer {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* Ensure container takes full viewport height */
+    padding: 20px; /* Add some padding */
+}
+
+  .order {
+    width: 100%; /* Make it full width */
+    height: auto; /* Allow height to adjust */
+    padding: 20px; /* Adjust padding */
+    margin-top: 0; /* Remove top margin */
+  }
+
+  .imageAboveText {
+    width: 80px; /* Adjust image size */
+    height: 80px; /* Adjust image size */
+    margin: 20px auto; /* Center image horizontally and add bottom margin */
+    display: block; /* Ensure it's displayed as a block element */
+}
+
+  .ordertext {
+    font-size: 18px; /* Decrease font size */
+    margin-left: 0; /* Remove left margin */
+    text-align: center; /* Center text */
+  }
+
+  .ordermess {
+    font-size: 16px; /* Decrease font size */
+    margin-left: 0; /* Remove left margin */
+    text-align: center; /* Center text */
+  }
+
+  .orderbtn {
+    width: 100%; /* Make button full width */
+    margin: 20px auto; /* Center button */
+    border-radius: 10px; /* Decrease border radius */
+  }
+
+  .logocart {
+    display: flex; /* Ensure items are displayed in a flex container */
+    align-items: center; /* Align items vertically */
+    padding: -10px; /* Add padding */
+    background-color:  #2E0052;/* Add background color */
+}
+
+.cartimg{
+      margin: 0; /* Remove margins */
+    margin-left: 0px; /* Add right margin */
+}
+
+.cartlogo {
+    margin: 20px 0 0;
+    color: white !important;
+    font-size: 25px;
+
+
+}
 }

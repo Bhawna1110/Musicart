@@ -39,8 +39,8 @@ const Dashboard = () => {
 
   const fetchProducts = async () => {
     try {
-    const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/products');
-
+      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/products');
+      const response = await fetch('http://localhost:3000/products');
 
       const data = await response.json();
       setProducts(data);
@@ -62,8 +62,8 @@ const Dashboard = () => {
       if (token) {
         setIsLoggedIn(true);
       }
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
-
+      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/user-data', {
+      const response = await fetch('http://localhost:3000/user-data', {
 
         headers: {
           Authorization: token,
@@ -170,8 +170,8 @@ const Dashboard = () => {
       console.log(productId)
       const token = localStorage.getItem('token');
       const cartItem = { product: productId, quantity: 1 }; 
-    const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
-
+      // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/add-to-cart/${String(productId)}`, {
+      const response = await fetch(`http://localhost:3000/add-to-cart/${String(productId)}`, {
 
         method: 'POST',
         headers: {
@@ -197,12 +197,11 @@ const Dashboard = () => {
   };
 
 
-
   const fetchCartItemCount = async () => {
     try {
       const token = localStorage.getItem('token');
-     const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart/count', {
-      
+      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart/count', {
+      const response = await fetch('http://localhost:3000/cart/count', {
 
         headers: {
           Authorization: token,
@@ -270,8 +269,8 @@ const Dashboard = () => {
       </div>
       <div className={styles.carousel}>
         <img className={styles.ban} src="banner.png" alt="Banner" />
-        <img className={styles.girl} src="girl.png" alt="Girl" />
-        <p className={styles.para}>Grab upto 50% off on<br />Selected headphones</p>
+        {/* <img className={styles.girl} src="girl.png" alt="Girl" /> */}
+        {/* <p className={styles.para}>Grab upto 50% off on<br />Selected headphones</p> */}
       </div>
       <br />
       <div className={styles.searchBar}>
@@ -375,11 +374,33 @@ const Dashboard = () => {
       {showFeedbackForm && <FeedbackForm onClose={toggleFeedbackForm} />}
       </div>
 
+      {window.innerWidth <= 767 && (
+        <div className={styles.floatingButtonMenu}>
+          <div className={styles.floatingButton} onClick={() => navigate('/dashboard')}>
+            <img src="home.png" alt="Home" />
+          </div>
+          <div className={styles.floatingButton} onClick={() => navigate('/cart')}>
+            <img src="carticon.png" alt="Cart" />
+          </div>
+          {isLoggedIn ? (
+            <div className={styles.floatingButton} onClick={handleLogout}>
+              <img src="invoice.png" alt="Logout" />
+            </div>
+          ) : (
+            <div className={styles.floatingButton} onClick={handleLogin}>
+              <img src="loginicon.png" alt="Login" />
+            </div>
+          )}
+        </div>
+      )}
+      
       <footer className={styles.bottom}>
         <p>Musicart | All rights reserved</p>
       </footer>
     </div>
+    
   );
 };
+
 
 export default Dashboard;

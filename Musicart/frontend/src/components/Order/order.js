@@ -29,9 +29,7 @@ const navigate = useNavigate();
         </div>
 
       </div>
-      <footer className={styles.last}>
-            © Musicart | All rights reserved
-          </footer>
+      
     </div>
   );
 }

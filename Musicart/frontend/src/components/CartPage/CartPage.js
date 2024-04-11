@@ -7,6 +7,7 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0); 
+  const [searchQuery, setSearchQuery] = useState('');
   const [orderTotal, setOrderTotal] = useState(0);
   const navigate = useNavigate();
 
@@ -25,7 +26,8 @@ const CartPage = () => {
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
+      // const response = await fetch('https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/cart', {
+      const response = await fetch('http://localhost:3000/cart', {
 
         headers: {
           Authorization: token,
@@ -75,7 +77,7 @@ const CartPage = () => {
   };
 
   const handlePlaceOrder = () => {
-    navigate('/checkoutpage', { state: { orderTotal } });
+    navigate('/checkoutpage', { state: { orderTotal } }); // need to check on this.
   };
 
 
@@ -86,13 +88,16 @@ const CartPage = () => {
     const total = totalAmount + convienceCharge;
     setOrderTotal(total);
   };
-
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    applyFilters({ ...filters, searchQuery: e.target.value });
+  };
   const handleQuantityChange = async (e, itemId) => {
     try {
       const newQuantity = parseInt(e.target.value);
       const token = localStorage.getItem('token');
-    const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/update-quantity/${itemId}`, {
-     
+      // const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-66kf.onrender.com/update-quantity/${itemId}`, {
+      const response = await fetch(`http://localhost:3000/update-quantity/${itemId}`, {
 
         method: 'PUT',
         headers: {
@@ -128,6 +133,16 @@ const CartPage = () => {
 
   return (
     <div className={styles.cartpage}>
+    <div className={styles.searchBar}>
+        <img src="search.png" alt="Search Icon" className={styles.searchIcon} />
+        <input
+          type="text"
+          className={styles.searchInput}
+          placeholder="Search Musicart"
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+      </div>
       <div className={styles.carthead}>
         <div className={styles.mobNumber}>
           <span><img className={styles.phone} src="phone.png" alt="Phone Icon" /></span>
@@ -161,7 +176,7 @@ const CartPage = () => {
         
         <div>
         <button className={styles.backToProducts} onClick={() => navigate('/dashboard')}> Back to products</button>
-        
+        <button className={styles.backButton} onClick={() => navigate('/dashboard')}> &lt;</button>
         </div>
         
         <div className={styles.bagContainer}>
@@ -230,6 +245,26 @@ const CartPage = () => {
       <footer className={styles.bottom}>
         <p>Musicart | All rights reserved</p>
       </footer> 
+      
+      {window.innerWidth <= 767 && (
+        <div className={styles.floatingButtonMenu}>
+          <div className={styles.floatingButton} onClick={() => navigate('/dashboard')}>
+            <img src="home.png" alt="Home" />
+          </div>
+          <div className={styles.floatingButton} onClick={() => navigate('/cart')}>
+            <img src="carticon.png" alt="Cart" />
+          </div>
+          {isLoggedIn ? (
+            <div className={styles.floatingButton} onClick={handleLogout}>
+              <img src="invoice.png" alt="Logout" />
+            </div>
+          ) : (
+            <div className={styles.floatingButton} onClick={handleLogin}>
+              <img src="loginicon.png" alt="Login" />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

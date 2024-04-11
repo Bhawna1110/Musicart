@@ -627,33 +627,210 @@ margin-top: 37px;
    width: 100%; 
 
 }
-@media only screen and (max-width: 768px) {
-  
-  .head, .logoSection, 
-  .addToCartButton{
+
+
+/* Media query for mobile view */
+@media (max-width: 767px) {
+  /* Header */
+  .head {
+    background: none;
+  }
+  .mobNumber,
+  .userOptions {
     display: none;
   }
-  .carousel {
-    margin-top: 100px;
+  .phoneNumber,
+  .discountOffer {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  .searchBar {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 10;
+    right: 0; 
+    z-index: 100;
+    background-color: #2E0052;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+
+
   }
 
-  .searchBar {
-    margin-top: -480px;
-    width: 90%;
+  /* Carousel */
+  .carousel {
+    flex-direction: column;
+  }
+  .ban {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+  .girl {
+    width: 100%;
+    height: auto;
+    transform: translateX(0);
+    position: static;
+  }
+  .para {
+    font-size: 40px;
+    line-height: 1.2;
+    left: 50%;
+  }
+
+  /* Filters */
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent items from wrapping */
+  width: 100%; /* Set width to ensure it fills the available space */
+}
+
+#select1,
+#select2,
+#select3,
+#select4,
+#select5 {
+  margin-right: 10px; /* Add some spacing between the select elements */
+  vertical-align: middle;
+  min-width: 150px; /* Set a minimum width for the select elements */
+}
+
+  /* Resetting any default list styling */
+  /* select {
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+  } */
+
+  /* Product Grid */
+  .productGridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0px;
+  }
+
+
+  .upperSection {
+    width: 100%;
+    height: auto;
+  }
+  .lowerSectionGrid {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  /* Footer */
+  .bottom {
+    height: auto;
+    padding: 10px 0;
+  }
+  .options {
+    justify-content: center;
+  }
+  .viewCartButton {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .userInitials {
+    margin-left: 0;
+  }
+
+  .searchIcon {
+    margin-left: 25px;
+    filter: brightness(0) invert(1);
   }
 
   .searchInput {
-    width: 80%;
+    width: 90%; 
+    font-size: 16px;
+    color: black;
   }
 
-  .filters {
-    overflow-x: auto;
-    white-space: nowrap;
-    margin: 10px auto;
+  .carousel {
+    margin-top: -15px; 
+    margin-bottom: -30px; 
+
   }
 
-  .filters select {
-    margin-right: 10px;
+  .viewOptions,
+  .productGrid {
+    margin-top: 20px; 
   }
 
-} 
+  .feedbackButton {
+    width: 60px;
+    height: 60px;
+  }
+ 
+  .emptyLine {
+    display: none;
+  }
+
+  .logoSection{
+    display: none;
+  }
+
+  .viewCartButton {
+    display: none;
+  }
+
+  .userInitials {
+    display: none;
+  }
+  .gridView{
+    display: none;
+  }
+  .listView{
+    display: none;
+  }
+
+
+  #select5 {
+    width: 100%; /* Adjust the width as needed */
+    margin-left: 10px; /* Push it to the left */
+}
+
+
+
+  .floatingButtonMenu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .floatingButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .floatingButton img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .floatingButton span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}

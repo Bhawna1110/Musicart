@@ -305,3 +305,88 @@ font-weight: 500;
  width: 100%; 
 
 }
+
+
+@media only screen and (max-width: 768px) {
+  
+  .carthead, .logoCart, 
+   productDetails h2, .bottom, .backToProducts, .bagContainer, .priceDetailsTitle, .discount{
+    display: none;
+  }
+  .totalMRP{
+    margin-top: 200px;
+    margin-right: 100px;
+    align-items: center;
+  }
+  
+
+  .floatingButtonMenu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .floatingButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .floatingButton img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .searchIcon {
+    margin-left: 25px;
+    filter: brightness(0) invert(1);
+  }
+
+  .searchInput {
+    width: 90%; 
+    font-size: 16px;
+    color: black;
+  }
+  
+  .searchBar {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    padding: 10px;
+    position: sticky;
+    top: 100;
+    left: 10;
+    right: 0;
+   
+    background-color: #2E0052;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  .floatingButton span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .placeOrder{
+    margin-bottom: 100px;
+  }
+  .backButton {
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+    color: black;
+
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 10px;
+  }
+
+}
