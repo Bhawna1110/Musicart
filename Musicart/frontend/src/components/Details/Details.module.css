@@ -133,7 +133,9 @@ height: 39px;
   margin-top: 15px;
   margin-left: 10px;
 }
-
+.backButton{
+  display:none;
+}
 .cartOption {
   margin-top: 22px;
   margin-left: -15px;
