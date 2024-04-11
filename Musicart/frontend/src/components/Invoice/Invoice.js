@@ -95,7 +95,7 @@ const InvoicePage = () => {
     <div className={styles.checkoutPage}>
       <div className={styles.carthead}>
         <div className={styles.mobNumber}>
-          <span className={styles.phone}  /></span>
+          <span><img className={styles.phone} src="phone.png" alt="Phone Icon" /></span>
           <span className={styles.phoneNumber}>912121131313</span>
           <span className={styles.discountOffer}>Get 50% off on selected items | Shop Now</span>
         </div>
@@ -113,7 +113,7 @@ const InvoicePage = () => {
       </div>
       <div className={styles.emptyCart}></div>
       <div className={styles.logoCart}>
-        <span className={styles.cartImage} /></span>
+        <img className={styles.cartImage} src="logo.png" alt="Logo" />
         <div className={styles.cartLogo}>Musicart</div>
         <p className={styles.cartOption}>
           Home/View Cart
@@ -144,7 +144,6 @@ const InvoicePage = () => {
         </div>
       </div>
       <hr className={styles.summaryDivider} />
-            <h2 className={styles.sectionTitle3}>3. Review Items and Delivery</h2>
       <div className={styles.section3}>
         <div className={styles.productGrid}>
           {order.items.map((item, index) => (
