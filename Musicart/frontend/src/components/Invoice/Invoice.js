@@ -45,7 +45,7 @@ const InvoicePage = () => {
     const fetchOrderDetails = async () => {
       try {
         console.log(orderId)
-        const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/orders/${orderId}`);
+        const response = await fetch(`https://sumanbhawna11-gmail-com-cuvette-final-cw4j.onrender.com/orders/₹{orderId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch order details');
         }
@@ -169,10 +169,10 @@ const InvoicePage = () => {
       <div className={styles.orderSummary}>
         <h2 className={styles.summaryTitle}>Order Summary</h2>
         <div className={styles.summaryDetails}>
-          <p className={styles.itemTotal}>Items: <span className={styles.totalAmt}>${order.orderTotal}</span></p>
-          <p className={styles.deliveryCharge}>Delivery: $45</p>
+          <p className={styles.itemTotal}>Items: <span className={styles.totalAmt}>₹{order.orderTotal}</span></p>
+          <p className={styles.deliveryCharge}>Delivery: ₹45</p>
           <hr className={styles.summaryDivider} />
-          <p className={styles.orderTotal}>Order Total: <span className={styles.totalRed}>${order.orderTotal + 45}</span></p>
+          <p className={styles.orderTotal}>Order Total: <span className={styles.totalRed}>₹{order.orderTotal + 45}</span></p>
         </div>
       </div>
       <footer className={styles.bottom}>
